@@ -1,6 +1,7 @@
 # 303. Range Sum Query - Immutable
 #
 # Calculate the sum of the elements of nums between indices left and right, inclusive.
+
 from typing import List
 
 class NumArray:

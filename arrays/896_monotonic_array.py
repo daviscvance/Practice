@@ -3,6 +3,8 @@
 # Given an integer array nums, return true if the given
 # array is monotonic, or false otherwise.
 
+from typing import List
+
 class Solution:
     def isMonotonic(self, nums: List[int]) -> bool:
         increasing, decreasing = True, True

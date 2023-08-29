@@ -2,6 +2,8 @@
 #
 # Find if the target is obtainable by applying MAX over the triplets.
 
+from typing import List
+
 class Solution:
     def mergeTriplets(self, triplets: List[List[int]], target: List[int]) -> bool:
         match = [False] * 3

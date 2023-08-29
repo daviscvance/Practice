@@ -5,6 +5,8 @@
 #
 # sumRegion: O(1) time complexity
 
+from typing import List
+
 class NumMatrix:
     pre_sum = [[]]
 
