@@ -4,6 +4,8 @@
 #
 # Return the maximum amount of water a container (2 vertical lines against an x-axis) can store.
 
+from typing import List
+
 class Solution:
     def maxArea(self, height: List[int]) -> int:
         global_max = local_max = 0
