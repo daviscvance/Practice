@@ -1,14 +1,13 @@
 # 15. 3Sum
 # Medium
 # Array, Two Pointers, Sorting
+# https://leetcode.com/problems/3sum/
 #
-# Given an integer array nums, return all the triplets such that i != j, i != k,
-# and j != k, and the sum of the triplet is 0.
-
-from typing import List
+# Given an integer array nums, return all the triplets such that i != j, i != k, and j != k, and
+# the sum of the triplet is 0.
 
 class Solution:
-    def threeSum(self, nums: List[int]) -> List[List[int]]:
+    def threeSum(self, nums: list[int]) -> list[list[int]]:
         nums.sort()
         N = len(nums)
 

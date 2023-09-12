@@ -1,16 +1,17 @@
 # 304. Range Sum Query 2D - Immutable
+# Medium
+# Array, Design, Matrix, Prefix Sum
+# https://leetcode.com/problems/range-sum-query-2d-immutable/
 #
-# Calculate the sum of the elements of matrix inside the rectangle defined by its upper left
+# Calculate the sum of a matrix defined by its upper left
 # corner (row1, col1) and lower right corner (row2, col2).
 #
 # sumRegion: O(1) time complexity
 
-from typing import List
-
 class NumMatrix:
     pre_sum = [[]]
-
-    def __init__(self, matrix: List[List[int]]):
+    
+    def __init__(self, matrix: list[list[int]]):
         # Check conditions of matrix and skip any unneccessary work.
         if not matrix or matrix == [[-1]]: return
         rows, cols = len(matrix), len(matrix[0])

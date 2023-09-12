@@ -1,14 +1,14 @@
 # 904. Fruit Into Baskets
 # Medium
 # Array, Hash Table, Sliding Window
+# https://leetcode.com/problems/fruit-into-baskets
 #
 # Return the maximum number of 2 fruits types in a row.
-from types import List
+
+from collections import defaultdict
 
 class Solution:
-    def totalFruit(self, fruits: List[int]) -> int:
-        from collections import defaultdict
-        
+    def totalFruit(self, fruits: list[int]) -> int:        
         # Store the frequency of the elements in the subarray.
         count = defaultdict(int) 
         l = 0

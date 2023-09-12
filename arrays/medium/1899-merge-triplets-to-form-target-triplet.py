@@ -1,11 +1,12 @@
 # 1899. Merge Triplets to Form Target Triplet
+# Medium
+# Array, Greedy
+# https://leetcode.com/problems/merge-triplets-to-form-target-triplet
 #
-# Find if the target is obtainable by applying MAX over the triplets.
-
-from typing import List
+# Find if the target is obtainable by applying MAX() over the triplets.
 
 class Solution:
-    def mergeTriplets(self, triplets: List[List[int]], target: List[int]) -> bool:
+    def mergeTriplets(self, triplets: list[list[int]], target: list[int]) -> bool:
         match = [False] * 3
 
         for a, b, c in triplets:
@@ -13,7 +14,7 @@ class Solution:
             if a > target[0] or b > target[1] or c > target[2]:
                 continue
 
-            # Otherwise, perform max and flip the target switch.
+            # Otherwise, perform MAX() and flip the target switch.
             if a == target[0]:
                 match[0] = True
             if b == target[1]:
