@@ -1,13 +1,12 @@
 # 11. Container With Most Water
 # Medium
 # Array, Two Pointers, Greedy
+# https://leetcode.com/problems/container-with-most-water
 #
 # Return the maximum amount of water a container (2 vertical lines against an x-axis) can store.
 
-from typing import List
-
 class Solution:
-    def maxArea(self, height: List[int]) -> int:
+    def maxArea(self, height: list[int]) -> int:
         global_max = local_max = 0
         N = len(height)
 

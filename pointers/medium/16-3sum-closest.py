@@ -1,13 +1,12 @@
 # 16. 3Sum Closest 
 # Medium
 # Array, Two Pointers, Sorting
+# https://leetcode.com/problems/3sum-closest
 #
-# Find three integers in nums such that the sum is closest to target.
-
-from typing import List
+# Find three integers such that the sum is closest to target.
 
 class Solution:
-    def threeSumClosest(self, nums: List[int], target: int) -> int:
+    def threeSumClosest(self, nums: list[int], target: int) -> int:
         closest = float('inf')
         N = len(nums)
         nums.sort()

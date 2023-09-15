@@ -4,11 +4,9 @@
 #
 # Calculate the sum between indices left and right, inclusive.
 
-from typing import List
-
 class NumArray:
 
-    def __init__(self, nums: List[int]):
+    def __init__(self, nums: list[int]):
         self.nums = nums
 
     def sumRange(self, left: int, right: int) -> int:

@@ -1,12 +1,11 @@
 # 896. Monotonic Array
+# Easy
+# Array
 #
-# Given an integer array nums, return true if the given
-# array is monotonic, or false otherwise.
-
-from typing import List
+# Return true if the given array is monotonic (ASC or DESC).
 
 class Solution:
-    def isMonotonic(self, nums: List[int]) -> bool:
+    def isMonotonic(self, nums: list[int]) -> bool:
         increasing, decreasing = True, True
         N = len(nums)
         for i in range(N):
@@ -16,4 +15,3 @@ class Solution:
                 elif nums[i-1] > nums[i]:
                     increasing = False 
         return increasing | decreasing
-

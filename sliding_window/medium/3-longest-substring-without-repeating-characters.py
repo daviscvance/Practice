@@ -1,10 +1,11 @@
 # 3. Longest Substring Without Repeating Characters
 # Medium
 # Hash Table, String, Sliding Window
+# https://leetcode.com/problems/longest-substring-without-repeating-characters
 #
 # Find the longest substring length without repeating characters.
 
-# O(N) time complexity, O(m) space complexity
+# O(N) time | O(m) space
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         l, longest, seen = 0, 0, {}
@@ -46,4 +47,3 @@ class Solution:
 # #                     return longest
 # #             continue
 # #         return longest
-
