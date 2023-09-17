@@ -15,6 +15,7 @@
 #   b  a  n  a  n  a
 
 class Solution:
+    # Dynamic Programing (Matrix) | Time: O(N log N) | Space: O(N^2)
     def longestPalindrome(self, s: str) -> str:
             dp = [[0]*len(s) for _ in range(len(s))]
             for i in range(len(s)):
@@ -34,3 +35,19 @@ class Solution:
                             if len(longest) < len(s[i:j+1]):
                                 longest = s[i:j+1]
             return longest
+
+class Solution:
+    # Expansion | Time: O(N^2) | Space: O(1)
+    def longestPalindrome(self, s: str) -> str:
+        longest_p = ''
+        for i in range(len(s)):
+            even_p = self.get_palindrome(s, i, i+1)
+            odd_p = self.get_palindrome(s, i, i)
+            longest_p = max([longest_p, even_p, odd_p], key=len)
+        return longest_p
+    
+    def get_palindrome(self, s: str, l: int, r: int) -> str:
+        while l >= 0 and r < len(s) and s[l] == s[r]:
+            l -= 1
+            r += 1
+        return s[l+1:r]
