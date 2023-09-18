@@ -3,7 +3,7 @@
 # String, Dynamic Programming
 # https://leetcode.com/problems/longest-palindromic-substring
 # 
-# Return the longest palindromic substring in s.
+# Return the longest palindromic substring within s.
 
 #   b  a  n  a  n  a
 # b.1  0  0  0  0  0 b: 1
@@ -15,7 +15,7 @@
 #   b  a  n  a  n  a
 
 class Solution:
-    # Dynamic Programing (Matrix) | Time: O(N log N) | Space: O(N^2)
+    # Dynamic Programming (Matrix) | Time: O(N log N) | Space: O(N^2)
     def longestPalindrome(self, s: str) -> str:
             dp = [[0]*len(s) for _ in range(len(s))]
             for i in range(len(s)):
@@ -23,8 +23,8 @@ class Solution:
                 
             longest = s[-1]
             for i in range(len(s)-1, -1, -1):
-                # Compare matching letters starting from the end and working inwards operating
-                # only on the upper side of the diagonal.
+                # Compare matching letters starting from the end and working
+                # inwards operating only on the upper side of the diagonal.
                 for j in range(i+1, len(s)): 
                     if s[i] == s[j]:
                         # Either starting a new palindrome at 2 or 3 letters 
@@ -48,6 +48,7 @@ class Solution:
     
     def get_palindrome(self, s: str, l: int, r: int) -> str:
         while l >= 0 and r < len(s) and s[l] == s[r]:
-            l -= 1
+            # Expand.
+            l -= 1 
             r += 1
         return s[l+1:r]
