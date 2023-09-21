@@ -7,7 +7,7 @@
 # Return the indices of the array where index1 < index2.
 
 class Solution:
-    # O(N) Time | O(1) Space
+    # Time: O(n) | Space: O(1)
     def twoSum(self, numbers: list[int], target: int) -> list[int]:
         left, right = 0, len(numbers) - 1
         while left < right:

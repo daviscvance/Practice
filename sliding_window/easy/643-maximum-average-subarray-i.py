@@ -7,7 +7,7 @@
 # return this value.
 
 class Solution:
-    # Time: O(N) | Space: O(1)
+    # Time: O(n) | Space: O(1)
     def findMaxAverage(self, nums: list[int], k: int) -> float:
         local_sum = max_sum = sum(nums[:k])
         for i in range(k, len(nums)):

@@ -14,23 +14,23 @@ class Solution:
                 return i
         return -1
 
-class Solution:
-    # Sliding Window StringBuilder| Time: O(n^2) | Space: O(1)
-    def strStr(self, haystack: str, needle: str) -> int:
-        substr = ''
-        N = len(needle)
-        for i, letter in enumerate(haystack):
-            substr += letter
-            if len(substr) == N:
-                if substr == needle:
-                    return i - N + 1
-                substr = substr[1:]
-        return -1
+# class Solution:
+#     # Sliding Window StringBuilder| Time: O(n^2) | Space: O(1)
+#     def strStr(self, haystack: str, needle: str) -> int:
+#         substr = ''
+#         N = len(needle)
+#         for i, letter in enumerate(haystack):
+#             substr += letter
+#             if len(substr) == N:
+#                 if substr == needle:
+#                     return i - N + 1
+#                 substr = substr[1:]
+#         return -1
 
-class Solution:
-    # Find | Time: O(n^2) | Space: O(1)
-    def strStr(self, haystack: str, needle: str) -> int:
-        return haystack.find(needle)
+# class Solution:
+#     # Find | Time: O(n^2) | Space: O(1)
+#     def strStr(self, haystack: str, needle: str) -> int:
+#         return haystack.find(needle)
         # Same thing:
         #
         # for i, _ in enumerate(haystack):

@@ -8,7 +8,7 @@
 from collections import Counter
 
 class Solution:
-    # Hash Map | Time: O(N) | Space: O(c) where c is the number of unique characters.
+    # Hash Map | Time: O(n) | Space: O(uniq.char)
     def longestPalindrome(self, string: str) -> int:
         map_char = Counter(string)
 

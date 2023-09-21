@@ -6,7 +6,7 @@
 # Find if there are two indices i and j in an array that are equal and less than k units apart.
 
 class Solution:
-    # Index Memo: Time: O(N) | Space: O(k)
+    # Index Memo: Time: O(n) | Space: O(k)
     def containsNearbyDuplicate(self, nums: list[int], k: int) -> bool:
         hash_map = {}
         for idx, num in enumerate(nums):

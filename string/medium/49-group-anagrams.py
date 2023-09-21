@@ -8,7 +8,7 @@
 from collections import defaultdict
 
 class Solution:
-    # Sorting + Hash map | Time: O(N*Klog⁡K) | Space: O(N*K)
+    # Sorting + Hash map | Time: O(n * k log⁡ k) | Space: O(n*k)
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
         anagram = defaultdict(list)
         for word in strs:

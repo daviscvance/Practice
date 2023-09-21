@@ -9,7 +9,7 @@
 from collections import Counter
 
 class Solution:
-    # Hash Set + Sliding Window | Time: O(N) | Space: O(N)
+    # Hash Set + Sliding Window | Time: O(n) | Space: O(n)
     def characterReplacement(self, s: str, k: int) -> int:
         l, longest = 0, 0
         for r in range(1, len(s)):

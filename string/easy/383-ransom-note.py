@@ -8,7 +8,7 @@
 from collections import Counter
 
 class Solution:
-    # Hash Table | Time: O(N+M) | Space: O(n+m)
+    # Hash Table | Time: O(n+m) | Space: O(n+m)
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
         note, mgz = Counter(ransomNote), Counter(magazine)
         # Intersection of note and mgz Counter objects is equal to note Counter object determines

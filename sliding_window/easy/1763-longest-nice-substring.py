@@ -6,7 +6,7 @@
 # Determine the longest substring where each letter has both an uppercase and lowercase.
 
 class Solution:
-    # Hash Set, Recursive Divide and Conquer | Time: O(26*N) | Space: O(26)
+    # Hash Set, Recursive Divide and Conquer | Time: O(26*n) | Space: O(26)
     def longestNiceSubstring(self, s: str) -> str:
         def helper(i: int, j: int):
             max_len_pair = empty_str = (0, -1)

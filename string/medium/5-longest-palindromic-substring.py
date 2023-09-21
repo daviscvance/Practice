@@ -15,7 +15,7 @@
 #   b  a  n  a  n  a
 
 class Solution:
-    # Dynamic Programming (Matrix) | Time: O(N log N) | Space: O(N^2)
+    # Dynamic Programming (Matrix) | Time: O(n log n) | Space: O(n^2)
     def longestPalindrome(self, s: str) -> str:
             dp = [[0]*len(s) for _ in range(len(s))]
             for i in range(len(s)):

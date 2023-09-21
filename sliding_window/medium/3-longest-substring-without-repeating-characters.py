@@ -5,8 +5,8 @@
 #
 # Find the longest substring length without repeating characters.
 
-# O(N) time | O(m) space
 class Solution:
+    # Time: O(n) | Space: O(m)
     def lengthOfLongestSubstring(self, s: str) -> int:
         l, longest, seen = 0, 0, {}
         for r in range(len(s)):
@@ -26,24 +26,24 @@ class Solution:
             seen[s[r]] = r
         return longest
 
-# # # O(N^2) time complexity (worst case, even though it doesnt)
-# # class Solution:
-# #     def lengthOfLongestSubstring(self, s: str) -> int:
-# #         S, longest = len(s), 1
-# #         if not S:
-# #             return S
-# #         for l in range(S):
-# #             r = 1
-# #             # As long as we dont look beyond the end of str
-# #             # and the current letter is not in the past substr
-# #             # keep looking for a substr longer than our longest
-# #             while l + longest < S and s[l+r] not in s[l:l+r]:
-# #                 if len(s[l:l+r+1]) <= longest:
-# #                     r += 1
-# #                     continue
-# #                 longest = max(longest, len(s[l:l+r+1]))
-# #                 r += 1
-# #                 if l + longest > S:
-# #                     return longest
-# #             continue
-# #         return longest
+# class Solution:
+#     # Time: O(n^2) | Space: O(1)
+#     def lengthOfLongestSubstring(self, s: str) -> int:
+#         S, longest = len(s), 1
+#         if not S:
+#             return S
+#         for l in range(S):
+#             r = 1
+#             # As long as we dont look beyond the end of str
+#             # and the current letter is not in the past substr
+#             # keep looking for a substr longer than our longest
+#             while l + longest < S and s[l+r] not in s[l:l+r]:
+#                 if len(s[l:l+r+1]) <= longest:
+#                     r += 1
+#                     continue
+#                 longest = max(longest, len(s[l:l+r+1]))
+#                 r += 1
+#                 if l + longest > S:
+#                     return longest
+#             continue
+#         return longest

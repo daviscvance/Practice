@@ -8,7 +8,7 @@
 from collections import Counter
 
 class Solution:
-    # Counter | Time: O(N) | Space: O(26)
+    # Counter | Time: O(n) | Space: O(26)
     def firstUniqChar(self, s: str) -> int:
         char_count = Counter(s)
         return next(
