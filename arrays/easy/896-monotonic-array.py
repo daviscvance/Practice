@@ -1,6 +1,7 @@
 # 896. Monotonic Array
 # Easy
 # Array
+# https://leetcode.com/problems/monotonic-array
 #
 # Return true if the given array is monotonic (ASC or DESC).
 
