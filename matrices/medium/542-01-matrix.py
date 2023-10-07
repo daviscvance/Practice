@@ -12,6 +12,7 @@ from collections import deque
 from itertools import product
 
 class Solution:
+    # BFS queue | Time: O(m*n) | Space O(m*n)
     def updateMatrix(self, matrix: list[list[int]]) -> list[list[int]]:
         rows, cols = len(matrix), len(matrix[0])
         directions = [[0, +1], [0, -1], [1, 0], [-1, 0]]
