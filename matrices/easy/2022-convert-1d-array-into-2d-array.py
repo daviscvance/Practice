@@ -9,7 +9,7 @@
 # Output: [[1,2],[3,4]]
 
 class Solution:
-    # Array splicing | Time: O() | Space: O()
+    # Array splicing | Time: O(n)? | Space: O(n)
     def construct2DArray(self, original: list[int], rows: int, cols: int) -> list[list[int]]:
         matrix = []
         N = len(original)
