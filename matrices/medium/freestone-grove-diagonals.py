@@ -2,6 +2,7 @@
 # Medium
 # Matrix
 # Freestone Grove Partners
+# See #498 for simpler version using dictionary.
 
 class Solution:
 
@@ -48,18 +49,7 @@ class Solution:
             diagonals.append(pad + edge + pad)
             pad.append(0)        
         return [*map(list, zip(*diagonals))]
-    
-    def up_right_diagonal_simple(self, matrix: list[list[int]]) -> None:
-        rows, cols = len(matrix), len(matrix[0])
-        diagonals = [[] for i in range(rows + cols - 1)] 
-        # for row in range(rows): 
-        #     for col in range(cols): 
-        #         diagonals[row + col].append(matrix[col][row]) 
-        
-        # for row in range(len(diagonals)): 
-        #     for col in range(len(diagonals[row])): 
-        #         print(diagonals[row][col], end = " ") 
-        #     print()
+
 
 matrix = [
     [1,  2,  3,  4],
