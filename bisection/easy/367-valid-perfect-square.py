@@ -14,15 +14,15 @@ class Solution:
         lo, hi = 1, num
         while lo <= hi:
             mid = (lo + hi) // 2
-            if mid ** 2 == num:
+            if mid*mid == num:
                 return True
-            elif mid ** 2 < num:
+            elif mid*mid < num:
                 lo = mid + 1
             else:
                 hi = mid - 1
         return False
 
-    # Incremental odd subtraction | Time: O(log n) | Space: O(1)
+    # Incremental odd subtraction | Time: O(sqrt(n)) | Space: O(1)
     def isPerfectSquare(self, num: int) -> bool:
         i = 1
         while num > 0:
