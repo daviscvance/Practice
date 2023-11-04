@@ -24,7 +24,7 @@ class Solution:
                 if current_load > capacity:  # Push heavy load to next day.
                     current_load = weight
                     ship_days += 1
-                    if ship_days > days:  # Can't ship within D days
+                    if ship_days > days:  # Can't ship within D days.
                         return False
             return True
 
