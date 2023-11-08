@@ -6,8 +6,11 @@
 # Return the k closest integers to x in an array, sorted ascending.
 # Input: arr = [1,2,3,4,5], k = 4, x = 3
 # Output: [1,2,3,4]
+# [1,2,3,4] is a window. 1 respresent window-open in our search space.
+# [2,3,4,5] is a window. 2 represents window-close in our search space.
 
 class Solution:
+    # Window bisection | Time: O(log n - k) + k | Space: O(1)
     def findClosestElements(self, arr: list[int], k: int, x: int) -> list[int]:
         # Binary search the array and return an index +k elements,
         # therefore the upper bound is at `length - k`.
@@ -15,12 +18,13 @@ class Solution:
 
         while lo < hi:
             mid = (lo + hi) // 2  # Opener of the return window.
-            # If window-open is further from x than the window-close, move past mid.
-            # Assume mid will be less than x and +k will be greater than x to make the math work.
-            if x - arr[mid] > arr[mid + k] - x:
+            # If window-low is further from x than the next-window, move past mid.
+            # Assume mid will be less than or equal to x and +k will be greater than x to make the 
+            # math work.
+            if (window_low := x - arr[mid]) > (next_window := arr[mid + k] - x):
                 lo = mid + 1
-            # Window-open is equal or closer to x than window-close.
-            # Keep window-open as candidate because of the constraint a < b.
+            # Window-low is equal or closer to x than next-window.
+            # Keep window-low as candidate because of the constraint a < b.
             else:
                 hi = mid
 
