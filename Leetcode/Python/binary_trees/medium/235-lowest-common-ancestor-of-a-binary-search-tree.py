@@ -17,8 +17,8 @@ class TreeNode:
         self.right = None
 
 class Solution:
-    # Recursion DFS | Time: O(log n) | Space: O(h)
-    def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
+    # Iterative DFS | Time: O(log n) | Space: O(h)
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         while True:
             if p.val < root.val > q.val:  # Root greater than both.
                 root = root.left  # Can continue searching left side.

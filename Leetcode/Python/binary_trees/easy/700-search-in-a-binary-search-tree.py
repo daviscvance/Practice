@@ -18,7 +18,7 @@ class TreeNode:
         self.right = right
 
 class Solution:
-    # Time: O(log n) | Space: call stack: O(log n)
+    # Recursion DFS | Time: O(log n) | Space: O(h)
     def searchBST(self, root: Optional[TreeNode], target: int) -> Optional[TreeNode]:
         if not root or root.val == target:
             return root
