@@ -20,7 +20,7 @@ class Solution:
     # Iterative | Two Pointer | Time: O(n) | Space: O(1)
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         past, present = None, head
-        while present:
+        while present:  # End of linked list will be null.
             future = present.next  # Save the next node before breaking the chain.
             present.next = past  # Reverse the link direction.
             past = present  # Move first pointer down towards the end.
