@@ -4,7 +4,6 @@
 # https://leetcode.com/problems/binary-tree-preorder-traversal
 
 # Return the preorder traversal of a tree's values.
-# def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
 # def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
 # Input: root = [1,null,2,3]
 # Output: [1,3,2]
@@ -21,10 +20,11 @@ class TreeNode:
 class Solution:
     # (2) Stack | Time: O(n) | Space: O(n)
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        stack, tree_preorder = [], []
+        stack, tree_preorder = [root], []
+
         if not root:
             return tree_preorder
-        stack.append(root)
+
         while stack:
             curr = stack.pop()
             tree_preorder.append(curr.val)
