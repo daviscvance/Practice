@@ -5,7 +5,8 @@
 #
 # Find the lowest common ancestor (LCA) of two given nodes in the BST.
 # A node is allowed to be a descendent of itself.
-# def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+# def lowestCommonAncestor(
+#       self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
 # Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4
 # Output: 2
 
@@ -18,7 +19,8 @@ class TreeNode:
 
 class Solution:
     # Iterative DFS | Time: O(log n) | Space: O(h)
-    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+    def lowestCommonAncestor(
+            self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         while True:
             if p.val < root.val > q.val:  # Root greater than both.
                 root = root.left  # Can continue searching left side.
