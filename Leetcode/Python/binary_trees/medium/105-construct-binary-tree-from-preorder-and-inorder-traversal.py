@@ -35,12 +35,12 @@ class Solution:
         idx_map = { v:i for i,v in enumerate(inorder) }
         return self.helper(idx_map, preorder, inorder, 0, len(preorder) - 1)
 
-    def helper(self, idx_map, preorder, inorder, left, right):
-        if left > right: return None  # No nodes left / empty inorder list.
+    def helper(self, idx_map, preorder, inorder, lower_bound, upper_bound):
+        if lower_bound > upper_bound: return None  # No nodes left / empty inorder list.
         root_val = preorder.pop()
         root = TreeNode(root_val)
         root.left = self.helper(
-            idx_map, preorder, inorder, left, idx_map[root_val] - 1)
+            idx_map, preorder, inorder, lower_bound, idx_map[root_val] - 1)
         root.right = self.helper(
-            idx_map, preorder, inorder, idx_map[root_val] + 1, right)
+            idx_map, preorder, inorder, idx_map[root_val] + 1, upper_bound)
         return root
