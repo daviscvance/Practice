@@ -24,7 +24,7 @@ class Solution:
             if remaining_sum == node.val and not node.left and not node.right:
                 paths.append(list(path + [node.val]))
 
-            # Add the node val to the current dfs path to avoid popping it later.
+            # Add the node val to the current dfs path to avoid popping it from a stack.
             self.dfs(node.left, remaining_sum - node.val, path + [node.val], paths)
             self.dfs(node.right, remaining_sum - node.val, path + [node.val], paths)
 
