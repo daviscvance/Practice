@@ -8,7 +8,8 @@
 # Input: root = [3,5,1,6,2,0,8,null,null,7,4], target = 5, k = 2
 # Output: [7,4,1]
 
-from typing import List, Optional
+from collections import defaultdict
+from typing import List
 
 class TreeNode:
     # Definition for a binary tree node.
@@ -18,18 +19,30 @@ class TreeNode:
         self.right = right
 
 class Solution:
-    # Recursive Pre-Order Traversal | Time: O(n) | Space: O(k log n)
+    # Graph conversion | Time: O(n) | Space: O(n)
     def distanceK(self, root: TreeNode, target: TreeNode, k: int) -> List[int]:
-        def findTarget(node: Optional[TreeNode]) -> List[int]:
-            nonlocal target
-            path = []
-            if not node:
+        graph = defaultdict(list)
+        def buildGraph(curr, parent):
+            if curr and parent:
+                graph[curr.val].append(parent.val)
+                graph[parent.val].append(curr.val)
+            if curr.left:
+                buildGraph(curr.left, curr)
+            if curr.right:
+                buildGraph(curr.right, curr)
+        buildGraph(root, None)
+
+        k_nodes = []
+        visited = set([target.val])
+
+        def dfs(curr, distance):
+            if distance == k:
+                k_nodes.append(curr)
                 return
-            elif node == target:
-                return path
-            else:  # Not found.
-                path.append(node)
-                return findTarget(node.left) or findTarget(node.right)
-        target_path = findTarget(root)
-        if target_path:
-            print(target_path)
+            for neighbor in graph[curr]:
+                if neighbor not in visited:
+                    visited.add(neighbor)
+                    dfs(neighbor, distance + 1)
+        dfs(target.val, 0)
+
+        return k_nodes
