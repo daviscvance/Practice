@@ -5,7 +5,7 @@
 #
 # Sum the house loot to rob without alerting the cops by robbing adjacent houses.
 # def rob(self, root: Optional[TreeNode]) -> int:
-# Input: root = [3,4,5,1,3,null,1]=
+# Input: root = [3,4,5,1,3,null,1]
 # Output: 9
 
 from __future__ import annotations
