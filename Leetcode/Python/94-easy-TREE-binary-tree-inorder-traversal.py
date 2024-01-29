@@ -33,10 +33,10 @@ class Solution:
     # (1) Recursion | Time: O(n) | Space: O(n)
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         tree_inorder = []
-        def helper(node: Optional[TreeNode], collection: List[int]) -> List[int]:
+        def helper(node: Optional[TreeNode], tree_collection: List[int]) -> List[int]:
             if node:
-                helper(node.left, collection)
-                collection.append(node.val)
-                helper(node.right, collection)
-            return collection
+                helper(node.left, tree_collection)
+                tree_collection.append(node.val)
+                helper(node.right, tree_collection)
+            return tree_collection
         return helper(root, tree_inorder)

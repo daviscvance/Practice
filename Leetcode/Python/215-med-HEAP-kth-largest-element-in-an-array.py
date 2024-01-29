@@ -9,15 +9,15 @@
 # Output: 4
 
 from heapq import heappush, heappushpop, heapify
+from typing import List
 
 class Solution:
-    # Heap | Time: O(n log n) | Space: O(k)
-    def findKthLargest(self, nums: list[int], k: int) -> int:
-        heapify(heap := [])
+    # Heap | Time: O(n log k) | Space: O(k)
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        min_heap = []
         for i in nums:
-            if len(heap) >= k:
-                heappushpop(heap, i)
+            if len(min_heap) >= k:
+                heappushpop(min_heap, i)
             else:
-                heappush(heap, i)
-        return heap[0]
-            
+                heappush(min_heap, i)
+        return min_heap[0]

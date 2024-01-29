@@ -8,18 +8,18 @@
 # Input: root = [1,2,5,3,4,null,6]
 # Output: [1,null,2,null,3,null,4,null,5,null,6]
 
-# from __future__ import annotations
-# from typing import List, Optional
+from __future__ import annotations
+from typing import Optional
 
-# class TreeNode:
-#     def __init__(
-#             self,
-#             val: int = 0,
-#             left: Optional[TreeNode] = None,
-#             right: Optional[TreeNode] = None) -> None:
-#         self.val = val
-#         self.left = left
-#         self.right = right
+class TreeNode:
+    def __init__(
+            self,
+            val: int = 0,
+            left: Optional[TreeNode] = None,
+            right: Optional[TreeNode] = None) -> None:
+        self.val = val
+        self.left = left
+        self.right = right
 
 class Solution:
     # Pre-order DFS + Stack (in-place) | Time: O(n) | Space: O(n)
@@ -37,6 +37,6 @@ class Solution:
                 left_tail.right = node.right
                 node.right = node.left
                 node.left = None
-            return right_tail if right_tail else left_tail
 
-        return self.flatten(root)
+            return right_tail if right_tail else left_tail
+        return flattenSubtree(root)
