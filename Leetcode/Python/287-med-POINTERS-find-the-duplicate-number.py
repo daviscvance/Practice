@@ -48,7 +48,7 @@ class Solution:
                 break
             nums[idx] = -nums[idx]
 
-        # The array should not be updated.
+        # The array should not be updated, revert to original state.
         for i in range(len(nums)):
             nums[i] = abs(nums[i])
 
@@ -65,8 +65,8 @@ class Solution:
             if slow == fast:
                 break
 
-        # The pointers will be the same pace away from the beginning, so to find the beginning of
-        # the cycle, they progress in sync until the duplicate is identified.
+        # The pointers will be the same pace away from the beginning of the cycle, so to find the
+        # beginning of the cycle, they progress in sync until the duplicate is identified.
         slow = nums[0]
         while slow != fast:
             slow = nums[slow]
