@@ -13,7 +13,7 @@ from itertools import product
 from typing import List
 
 class Solution:
-    # DFS | Time: O(n) | Space: O(n)
+    # BFS | Time: O(n) | Space: O(n)
     def islandPerimeter(self, grid: List[List[int]]) -> int:
         perimeter = 0
         R, C = len(grid), len(grid[0])
@@ -31,14 +31,14 @@ class Solution:
         visited = set()
         while stack:
             cell = stack.pop()
-            if cell in visited:
-                continue
             visited.add(cell)
             perimeter += 4
             for r, c in [(-1, 0), (0, -1), (0, 1), (1, 0)]:  # Grid Search.
                 if isIsland((sr := cell.x + r), (sc := cell.y + c)):
-                    stack.append(Cell(sr, sc))
                     perimeter -= 1  # Remove shared edges as perimeter.
+                    tc = Cell(sr, sc)
+                    if tc not in visited and tc not in stack:
+                        stack.append(tc)
         return perimeter
 
     # Linear search | Time: O(n) | Space: O(1)
@@ -55,3 +55,4 @@ class Solution:
                     if not isIsland(row + sr, col + sc):
                         perimeter += 1
         return perimeter
+    
