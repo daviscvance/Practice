@@ -65,5 +65,3 @@ for i in Solution().down_right_diagonal_edges(matrix):
 for i in Solution().down_left_diagonal_edges(matrix):
     [print(x, end=' ') for x in i if x]
     print()
-
-
