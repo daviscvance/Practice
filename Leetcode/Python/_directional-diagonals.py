@@ -45,7 +45,7 @@ class Solution:
         diagonals, pad = [], []
         while any(matrix):
             edge = [*next(zip(*reversed(matrix))), *matrix[0][1:]]
-            matrix    = [row[1:] for row in matrix[1:]]
+            matrix = [row[1:] for row in matrix[1:]]
             diagonals.append(pad + edge + pad)
             pad.append(0)        
         return [*map(list, zip(*diagonals))]
