@@ -7,6 +7,7 @@
 # def isAlienSorted(self, words: List[str], order: str) -> bool:
 
 from itertools import pairwise
+from typing import List
 
 class Solution:
     # Time : O(n) | Space: O(26)
@@ -25,24 +26,24 @@ class Solution:
             compare_lex_order(first, second) for first, second in pairwise(words)
         )
 
-# class Solution:
-#     # Time: O(n) | Space: O(n)
-#     def isAlienSorted(self, words: List[str], order: str) -> bool:
-#         order = {c:i for i, c in enumerate(order)}
-#
-#         for i in range(1, len(words)):
-#             for j in range(min(len(words[i]), len(words[i-1]))):
-#                 prev_word = order[words[i-1][j]]
-#                 curr_word = order[words[i][j]]
-#                 if curr_word < prev_word:
-#                     return False
-#                 elif curr_word > prev_word:
-#                     break
-#             else:
-#                 if len(words[i]) < len(words[i-1]):
-#                     return False
-#         return True
+class Solution:
+    # Time: O(n) | Space: O(n)
+    def isAlienSorted(self, words: List[str], order: str) -> bool:
+        order = {c:i for i, c in enumerate(order)}
 
-# class Solution:
-#     def isAlienSorted(self, words: List[str], order: str) -> bool:
-#         return words == sorted(words,key=lambda word:[order.index(c) for c in word])
+        for i in range(1, len(words)):
+            for j in range(min(len(words[i]), len(words[i-1]))):
+                prev_word = order[words[i-1][j]]
+                curr_word = order[words[i][j]]
+                if curr_word < prev_word:
+                    return False
+                elif curr_word > prev_word:
+                    break
+            else:
+                if len(words[i]) < len(words[i-1]):
+                    return False
+        return True
+
+class Solution:
+    def isAlienSorted(self, words: List[str], order: str) -> bool:
+        return words == sorted(words,key=lambda word:[order.index(c) for c in word])
