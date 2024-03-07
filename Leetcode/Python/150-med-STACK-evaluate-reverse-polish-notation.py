@@ -1,7 +1,7 @@
 # 150. Evaluate Reverse Polish Notation
 # Medium
 # Array, Math, Stack
-# https://leetcode.com/problems/evaluate-reverse-polish-notation/
+# https://leetcode.com/problems/evaluate-reverse-polish-notation
 #
 # Mathematically evaluate an array of string tokens in Reverse Polish Notation (RPN).
 # def evalRPN(self, tokens: List[str]) -> int:
