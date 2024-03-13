@@ -2,13 +2,16 @@
 # Easy
 # Array, Sorting
 # https://leetcode.com/problems/meeting-rooms
+#
+# def canAttendMeetings(self, intervals: List[List[int]]) -> bool:
 
 from itertools import pairwise
 from operator import itemgetter
+from typing import List
 
 class Solution:
     # Sorting | Time: O(nlogn) | Space: O(n)
-    def canAttendMeetings(self, intervals: list[list[int]]) -> bool:
+    def canAttendMeetings(self, intervals: List[List[int]]) -> bool:
         if len(intervals) == 1:
             return True
         intervals.sort(key=itemgetter(0))
