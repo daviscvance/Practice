@@ -8,8 +8,10 @@
 # Input: nums = [1,2,3,4]
 # Output: [24,12,8,6]
 
+from typing import List
+
 class Solution:
-    # Time: O(n) | Space: O(1)
+    # Prefix Product | Time: O(n) | Space: O(n)
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         length = len(nums)
         products = [1] * length
