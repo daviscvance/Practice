@@ -37,6 +37,4 @@ class Solution:
                 recursive_search(idx + 1, nums[idx]),
                 max_prod)
 
-        if not nums:
-            return 0
         return recursive_search(1, nums[0])
