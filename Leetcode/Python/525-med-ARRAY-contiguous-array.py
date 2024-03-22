@@ -17,7 +17,7 @@ class Solution:
         for i, b in enumerate(nums):
             if b == 0:
                 b = -1
-            tracker += b
+            tracker += (1 if b else -1)
             if tracker == 0:
                 qualifying[i] = True
 
