@@ -9,7 +9,8 @@
 # Output: ["i","love"]
 
 from collections import Counter
-from heapq import nsmallest, heappushpop, heappush
+from heapq import nsmallest, heapify, heappop, heappush, heappushpop
+from itertools import repeat
 
 class OrderedWord:
     def __init__(self, word):
@@ -32,9 +33,8 @@ class Solution:
             else:
                 heappush(heap, (count, OrderedWord(word)))
 
-        return [
-            OrdWord.word for ct, OrdWord in sorted(heap, key=lambda x: (x[0], x[1]), reverse=True)
-        ]
+        return [  # Ordered by freq in heap, but lexicographical order requires a sort.
+            OrdWord.word for ct, OrdWord in sorted(heap, key=lambda x: (x[0], x[1]), reverse=True)]
 
 class Solution:
     # Counter + nsmallest | Time: O(n log n) | Space: O(n)
@@ -42,3 +42,45 @@ class Solution:
         freq = Counter(words)
         # Get top k words by sorting key: smallest negative frequencies (hi->lo) & lexicographical.
         return nsmallest(k, freq.keys(), key=lambda x: (-freq[x], x))
+
+####################################################################################
+
+
+from typing import NamedTuple
+from operator import neg
+
+class Pair(NamedTuple):
+    word: str
+    freq: int
+
+    def __lt__(self, other: Pair) -> bool:
+        return self.freq < other.freq or (
+            self.freq == other.freq and self.word > other.word
+        )
+
+class Solution:
+    # Use a Min Heap | Time: O(n + nlogk) | Space: O(n) [due to counter]
+    def topKFrequent(self, words: list[str], k: int) -> list[str]:
+        counter = Counter(words)
+        heap = []
+        for word, freq in counter.items():
+            if len(heap) < k:
+                heappush(heap, Pair(word, freq))
+            else:
+                heappushpop(heap, Pair(word, freq))
+        heap.sort(reverse=True)
+        return [
+            pair.word 
+            for pair in heap
+        ]
+
+    # Use a Max Heap to store Top K | Time: O(n + klogn) | Space: O(n)
+    def topKFrequent(self, words: list[str], k: int) -> list[str]:
+        counter = Counter(words)
+        word_freq = NamedTuple("word_freq", freq=int, word=int)
+        heap = [word_freq(neg(freq), word) for word, freq in counter.items()]
+        heapify(heap)
+        return [heappop(heap).word for _ in repeat(None, k)]
+
+
+

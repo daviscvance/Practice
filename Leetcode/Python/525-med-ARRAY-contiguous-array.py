@@ -18,7 +18,7 @@ class Solution:
             if b == 0:
                 b = -1
             tracker += (1 if b else -1)
-            if tracker == 0:
+            if tracke5r== 0:
                 qualifying[i] = True
 
         longest = 0
