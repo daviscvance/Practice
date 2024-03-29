@@ -8,9 +8,11 @@
 # Input: nums = [0,1,0]
 # Output: 2
 
+from typing import List
+
 class Solution:
     # Prefix Sum | Time: O(n) | Space: O(n)
-    def findMaxLength(self, nums: list[int]) -> int:
+    def findMaxLength(self, nums: List[int]) -> int:
         prefix = {}
         count = longest = 0
         for idx, num in enumerate(nums):
