@@ -23,3 +23,4 @@ class Solution:
             triangle.append(level)
 
         return triangle
+    
