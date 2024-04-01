@@ -4,10 +4,12 @@
 # https://leetcode.com/problems/longest-common-prefix
 # 
 # Find the longest common prefix string amongst an array of strings.
+# def longestCommonPrefix(self, strs: List[str]) -> str:
 
+from typing import List
 class Solution:
     # Time: O(N) | Space: O(m) - Len of array.
-    def longestCommonPrefix(self, strs: list[str]) -> str:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
         strs = sorted(strs)
         common_prefix = ""
         first = strs[0]

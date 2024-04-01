@@ -4,6 +4,7 @@
 # https://leetcode.com/problems/string-to-integer-atoi
 #
 # Convert a string to a 32-bit signed integer.
+# def myAtoi(self, s: str) -> int:
 
 class Solution:
     def myAtoi(self, s: str) -> int:

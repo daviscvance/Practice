@@ -4,9 +4,12 @@
 # https://leetcode.com/problems/3sum-closest
 #
 # Find three integers such that the sum is closest to target.
+# def threeSumClosest(self, nums: List[int], target: int) -> int:
+
+from typing import List
 
 class Solution:
-    def threeSumClosest(self, nums: list[int], target: int) -> int:
+    def threeSumClosest(self, nums: List[int], target: int) -> int:
         closest = float('inf')
         N = len(nums)
         nums.sort()

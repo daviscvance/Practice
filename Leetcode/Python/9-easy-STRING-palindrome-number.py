@@ -4,6 +4,7 @@
 # https://leetcode.com/problems/palindrome-number
 #
 # Determine if an integer is a string-like palindrome.
+# def isPalindrome(self, x: int) -> bool:
 
 class Solution:
     def isPalindrome(self, x: int) -> bool:

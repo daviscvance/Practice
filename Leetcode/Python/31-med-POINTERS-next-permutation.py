@@ -5,8 +5,10 @@
 #
 # Find the next lexicographical permutation of an array.
 
+from typing import List
+
 class Solution:
-    def nextPermutation(self, nums: list[int]) -> None:
+    def nextPermutation(self, nums: List[int]) -> None:
         bPoint, n = -1, len(nums)
         for i in range(n-2, -1, -1):
             if nums[i] >= nums[i+1]: continue  # Skip decreasing sequence.

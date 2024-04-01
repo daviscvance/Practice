@@ -8,9 +8,11 @@
 # Input: nums = [5,7,7,8,8,10], target = 8
 # Output: [3,4]
 
+from typing import List
+
 class Solution:
     # Bisection (Left + Right)| Time: O(log n) | Space: O(1)
-    def searchRange(self, nums: list[int], target: int) -> list[int]:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
         from bisect import bisect_left, bisect_right
         lo = bisect_left(nums, target)
         hi = bisect_right(nums, target) - 1
@@ -20,7 +22,7 @@ class Solution:
 
 class Solution:
     # Binary Search + Nudge-In | Time: O(log n) | Space: O(1)
-    def searchRange(self, nums: list[int], target: int) -> list[int]:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
         lo, hi = 0, len(nums) - 1
         while lo <= hi:
             mid = (lo + hi) // 2

@@ -4,7 +4,8 @@
 # https://leetcode.com/problems/longest-palindromic-substring
 # 
 # Return the longest palindromic substring within s.
-
+# def longestPalindrome(self, s: str) -> str:
+#
 #   b  a  n  a  n  a
 # b.1  0  0  0  0  0 b: 1
 # a....1  0  1  0  1 a: 3 ← Maximum Sequence.

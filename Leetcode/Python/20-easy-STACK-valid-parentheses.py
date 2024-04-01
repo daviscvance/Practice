@@ -4,6 +4,7 @@
 # https://leetcode.com/problems/valid-parentheses
 #
 # Determine if an input string has valid bracketing.
+# def isValid(self, s: str) -> bool:
 
 from collections import deque
 
