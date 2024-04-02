@@ -1,5 +1,6 @@
 from typing import Union, Literal
 
+
 def bisect_left(array: list[int], target: int) -> Union[int, Literal[-1]]:
     """
     Returns the idx such that arr[:idx] < t (and arr[idx:] >= t)
@@ -30,5 +31,6 @@ def bisect_left(array: list[int], target: int) -> Union[int, Literal[-1]]:
             # check whether indices prior to it FAIL the IF condition.
             right = mid  # New search space [lo, mid).
     return left  # At point of exiting while loop left or right are the same so can return either.
+
 
 print(bisect_left([2, 3, 5, 4, 6, 7, 7, 7, 7, 8, 9], 7))

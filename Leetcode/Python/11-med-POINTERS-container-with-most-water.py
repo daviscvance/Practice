@@ -6,7 +6,9 @@
 # Return the maximum amount of water a container (2 vertical lines against an x-axis) can store.
 # def maxArea(self, height: list[int]) -> int:
 
+
 class Solution:
+
     def maxArea(self, height: list[int]) -> int:
         global_max = local_max = 0
         N = len(height)

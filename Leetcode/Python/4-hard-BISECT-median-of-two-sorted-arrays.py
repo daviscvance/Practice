@@ -10,19 +10,20 @@
 
 from typing import List
 
+
 class Solution:
     # Bisection | Time: O(log m + log n) / O(log(m*n)) | Space: O(log m*n)
     def findMedianSortedArrays(self, A: List[int], B: List[int]) -> float:
         nA, nB = len(A), len(B)
 
         def getKth(
-            k: int,  # Median to find.
-            # These variables represent the beginning and end of the search space in binary search
-            # in accordance to the A and B arrays.
+                k: int,  # Median to find.
+                # These variables represent the beginning and end of the search space in binary search
+                # in accordance to the A and B arrays.
             start_A: int = 0,
-            end_A: int = nA - 1,
-            start_B: int = 0,
-            end_B: int = nB - 1):
+                end_A: int = nA - 1,
+                start_B: int = 0,
+                end_B: int = nB - 1):
             '''
             Performs binary search recursively on 2 sorted arrays. The idea is to imagine they are
             being operated on as if they were already joined together. But without actually joining,
@@ -34,7 +35,7 @@ class Solution:
                 return B[k - start_A]
             if start_A <= end_A and start_B > end_B:
                 return A[k - start_B]
-            
+
             # Estimate where the actual median could be based on the medians of the two arrays.
             index_A, index_B = (start_A + end_A) // 2, (start_B + end_B) // 2
             value_A, value_B = A[index_A], B[index_B]

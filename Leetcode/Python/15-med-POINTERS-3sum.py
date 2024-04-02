@@ -9,7 +9,9 @@
 
 from typing import List
 
+
 class Solution:
+
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
         N = len(nums)
@@ -19,7 +21,7 @@ class Solution:
 
         if sum(nums[:3]) == 0 and nums[2] == 0:
             return [[0, 0, 0]]
-        
+
         triplets = []
         for i in range(N - 2):
             j = i + 1
@@ -41,4 +43,3 @@ class Solution:
                     while j < k and nums[j - 1] == nums[j]:
                         j += 1
         return triplets
-        

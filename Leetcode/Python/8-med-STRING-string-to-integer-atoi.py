@@ -6,13 +6,15 @@
 # Convert a string to a 32-bit signed integer.
 # def myAtoi(self, s: str) -> int:
 
+
 class Solution:
+
     def myAtoi(self, s: str) -> int:
         length, i, sign, num, clamp = len(s), 0, +1, '', pow(2, 31)
 
         while i < length and s[i] == ' ':
-            i +=1
-        
+            i += 1
+
         if i < length and s[i] in ('-', '+'):
             if s[i] == '-':
                 sign = -1

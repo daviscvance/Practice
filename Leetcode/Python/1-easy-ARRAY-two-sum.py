@@ -10,10 +10,12 @@
 
 from typing import List, NamedTuple
 
-class SearchSpace(NamedTuple): 
+
+class SearchSpace(NamedTuple):
     number: int
     index: int
     remainder: int
+
 
 class Solution:
     # Hash Table | Time: O(n) | Space: O(n)

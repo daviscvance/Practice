@@ -10,10 +10,11 @@
 
 from typing import List
 
+
 class Solution:
     # Binary Search | Time: O(log n) | Space: O(1)
     def search(self, nums: List[int], target: int) -> int:
-        lo, hi = 0, len(nums)-1
+        lo, hi = 0, len(nums) - 1
         while lo <= hi:
             mid = (lo + hi) // 2
             if nums[mid] == target:
@@ -28,6 +29,6 @@ class Solution:
             elif nums[mid] <= nums[hi]:  # Rightside is sorted.
                 if nums[mid] < target <= nums[hi]:
                     lo = mid + 1  # Target is mithin rightside.
-                else:  
+                else:
                     hi = mid - 1  # Target is within leftside.
         return -1

@@ -6,14 +6,16 @@
 # Find the index of a word in a string.
 # def strStr(self, haystack: str, needle: str) -> int:
 
+
 class Solution:
     # Sliding Window Hash | Time: O(n) | Space: O(1)
     def strStr(self, haystack: str, needle: str) -> int:
         hash_n, n, h = hash(needle), len(needle), len(haystack)
-        for i in range(h-n+1):
-            if hash(haystack[i:i+n]) == hash_n:
+        for i in range(h - n + 1):
+            if hash(haystack[i:i + n]) == hash_n:
                 return i
         return -1
+
 
 class Solution:
     # Sliding Window StringBuilder| Time: O(n^2) | Space: O(1)
@@ -27,6 +29,7 @@ class Solution:
                     return i - N + 1
                 substr = substr[1:]
         return -1
+
 
 class Solution:
     # Find | Time: O(n^2) | Space: O(1)

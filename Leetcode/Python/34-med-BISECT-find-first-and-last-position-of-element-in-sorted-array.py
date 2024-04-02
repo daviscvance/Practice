@@ -10,6 +10,7 @@
 
 from typing import List
 
+
 class Solution:
     # Bisection (Left + Right)| Time: O(log n) | Space: O(1)
     def searchRange(self, nums: List[int], target: int) -> List[int]:
@@ -19,6 +20,7 @@ class Solution:
         if nums and lo <= hi:
             return [lo, hi]
         return [-1, -1]
+
 
 class Solution:
     # Binary Search + Nudge-In | Time: O(log n) | Space: O(1)

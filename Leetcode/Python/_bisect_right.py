@@ -1,5 +1,6 @@
 from typing import Union, Literal
 
+
 def bisect_right(array: list[int], target: int) -> Union[int, Literal[-1]]:
     """
     Returns the idx such that arr[:idx] <= t (and arr[idx:] > t)

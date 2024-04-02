@@ -10,15 +10,18 @@
 
 from typing import Optional
 
+
 class ListNode:
     # Definition for singly-linked list.
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
 
+
 class Solution:
     # Iterative Mathy | Time: O(n+m) | Space: O(max(n, m))
-    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+    def addTwoNumbers(self, l1: Optional[ListNode],
+                      l2: Optional[ListNode]) -> Optional[ListNode]:
         carry = 0
         curr = dummy = ListNode()
         while l1 or l2:

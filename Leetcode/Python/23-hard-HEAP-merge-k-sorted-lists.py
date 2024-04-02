@@ -11,6 +11,7 @@
 from heapq import heappush, heappop
 from typing import List, Optional
 
+
 class ListNode:
     # Definition for singly-linked list.
     def __init__(self, val=0, next=None):
@@ -19,12 +20,15 @@ class ListNode:
 
     def __eq__(self, other):
         self.val == other.val
-    
+
     def __lt__(self, other):
         self.val < other.val
 
+
 class Solution:
-    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+
+    def mergeKLists(self,
+                    lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         # ListNode.__eq__ = lambda self, other: self.val == other.val
         # ListNode.__lt__ = lambda self, other: self.val < other.val
         head = tail = ListNode()
