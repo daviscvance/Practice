@@ -9,10 +9,12 @@
 # Output: [[1,6], [8,10], [15,18]]
 
 from operator import itemgetter
+from typing import List
+
 
 class Solution:
     # Stack + Sorting | Time: O(nlogn) | Space: O(n)
-    def merge(self, intervals: list[list[int]]) -> list[list[int]]:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
         get_start, get_end = itemgetter(0), itemgetter(1)
         intervals.sort(key=get_start)
         result = []

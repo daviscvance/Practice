@@ -10,16 +10,19 @@
 
 from typing import Optional
 
+
 class ListNode:
     # Definition for singly-linked list.
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
 
+
 class Solution:
     # (2) Stack | Time: O(n) | Space: O(n)
-    def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
-        prev = (dummy := ListNode(next = head))
+    def reverseBetween(self, head: Optional[ListNode], left: int,
+                       right: int) -> Optional[ListNode]:
+        prev = (dummy := ListNode(next=head))
         stack = []
 
         # Skip to the reversible section.
@@ -44,8 +47,9 @@ class Solution:
         return dummy.next
 
     # (1) Two Pointer | Time: O(n) | Space: O(1)
-    def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
-        past = (dummy := ListNode(next = head))
+    def reverseBetween(self, head: Optional[ListNode], left: int,
+                       right: int) -> Optional[ListNode]:
+        past = (dummy := ListNode(next=head))
 
         # Jump to the reversible section and add checkpoint before reversing.
         [(past := past.next) for _ in range(left - 1)]
@@ -54,7 +58,7 @@ class Solution:
         # Reverse the section while preserving the future chain.
         for _ in range(right - left):
             future = present.next
-            present.next = future.next 
+            present.next = future.next
             future.next = past.next
             past.next = future
 

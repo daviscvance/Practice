@@ -9,22 +9,23 @@
 # Input: x = 8
 # Output: 2
 
+
 class Solution:
     # Linear search (Brute) | Time: O(sqrt(n)) | Space: O(1)
     def mySqrt(self, x: int) -> int:
         i = 1
-        while i*i <= x:
+        while i * i <= x:
             i += 1
-        return i-1
-         
+        return i - 1
+
     # Binary Search | Time: O(log n) | Space: O(1)
     def mySqrt(self, x: int) -> int:
-        lo, hi = 1, x//2 + 1
+        lo, hi = 1, x // 2 + 1
         while lo <= hi:
             mid = (lo + hi) // 2
-            if mid*mid == x:
+            if mid * mid == x:
                 return mid
-            elif mid*mid > x:
+            elif mid * mid > x:
                 hi = mid - 1
             else:
                 lo = mid + 1

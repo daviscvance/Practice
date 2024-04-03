@@ -8,11 +8,14 @@
 # Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
 # Output: [[7,4,1],[8,5,2],[9,6,3]]
 
+from typing import List
+
+
 class Solution:
     # In-place modification | Time: O(n^2) | Space: O(n^2)
-    def rotate(self, matrix: list[list[int]]) -> None:
+    def rotate(self, matrix: List[List[int]]) -> None:
         rows = len(matrix)
-        
+
         # Transpose the matrix | Flip diagonally.
         for row in range(rows):
             for col in range(row, rows):
@@ -20,4 +23,3 @@ class Solution:
                 matrix[col][row], matrix[row][col]
             # Reverse row | Flip row vertically.
             matrix[row].reverse()
-            

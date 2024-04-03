@@ -1,12 +1,15 @@
 # 41. First Missing Positive
 # Hard
 # Array, Hash Table
-# 
+#
 # Return the smallest missing positive integer from an unsorted array.
+
+from typing import List
+
 
 class Solution:
     # Marking | Time: O(n) | Space: O(1)
-    def firstMissingPositive(self, nums: list[int]) -> int:
+    def firstMissingPositive(self, nums: List[int]) -> int:
         if not nums or 1 not in nums:
             return 1
 

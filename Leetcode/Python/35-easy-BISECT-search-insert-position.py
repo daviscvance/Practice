@@ -8,16 +8,19 @@
 # Input: nums = [1,3,5,6], target = 5
 # Output: 2
 
+from typing import List
+
+
 class Solution:
     # Linear Search (Brute) | Time: O(n) | Space: O(1)
-    def searchInsert(self, nums: list[int], target: int) -> int:
+    def searchInsert(self, nums: List[int], target: int) -> int:
         for i, num in enumerate(nums):
             if num >= target:
                 return i
         return len(nums)
 
     # Bisect Left | Time: O(log n) | Space: O(1)
-    def searchInsert(self, nums: list[int], target: int) -> int:
+    def searchInsert(self, nums: List[int], target: int) -> int:
         lo, hi = 0, len(nums)
         while lo < hi:
             mid = (lo + hi) // 2
@@ -28,6 +31,6 @@ class Solution:
         return lo
 
     # bisect_left | Time: O(log n) | Space: O(1)
-    def searchInsert(self, nums: list[int], target: int) -> int:
+    def searchInsert(self, nums: List[int], target: int) -> int:
         from bisect import bisect_left
         return bisect_left(nums, target)

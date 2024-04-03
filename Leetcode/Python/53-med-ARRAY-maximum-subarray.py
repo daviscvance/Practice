@@ -10,6 +10,7 @@
 
 from typing import List
 
+
 class Solution:
     # Kadane's | Time: O(N) | Space: O(1)
     def maxSubArray(self, nums: List[int]) -> int:

@@ -8,9 +8,12 @@
 # Input: nums = [2,5,6,0,0,1,2], target = 0
 # Output: true
 
+from typing import List
+
+
 class Solution:
     #  Binary Search | Time: O(log n) | Space: O(1)
-    def search(self, nums: list[int], target: int) -> bool:
+    def search(self, nums: List[int], target: int) -> bool:
         lo, hi = 0, len(nums) - 1
         while lo <= hi:
             mid = (lo + hi) // 2
@@ -22,7 +25,7 @@ class Solution:
                 if nums[mid] < target <= nums[hi]:  # Target in rightside.
                     lo = mid + 1
                 else:  # Target in leftside.
-                    hi = mid - 1 
+                    hi = mid - 1
             elif nums[lo] <= nums[mid]:  # Leftside is sorted.
                 if nums[lo] <= target < nums[mid]:  # Target in leftside.
                     hi = mid - 1
@@ -31,5 +34,5 @@ class Solution:
         return False
 
     # Linear Search | Time: O(n) | Space: O(1)
-    def search(self, nums: list[int], target: int) -> bool:
+    def search(self, nums: List[int], target: int) -> bool:
         return target in nums

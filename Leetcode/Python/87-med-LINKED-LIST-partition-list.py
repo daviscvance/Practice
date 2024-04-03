@@ -10,15 +10,18 @@
 
 from typing import Optional
 
+
 class ListNode:
     # Definition for singly-linked list.
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
 
+
 class Solution:
     # Iteration | Time: O(n) | Space: O(n)
-    def partition(self, head: Optional[ListNode], x: int) -> Optional[ListNode]:
+    def partition(self, head: Optional[ListNode],
+                  x: int) -> Optional[ListNode]:
         lesser_head, greater_head = ListNode(), ListNode()
         lesser, greater = lesser_head, greater_head
 

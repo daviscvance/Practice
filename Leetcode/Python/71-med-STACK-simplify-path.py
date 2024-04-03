@@ -5,7 +5,9 @@
 #
 # Process a file path into its simplified canonical path starting with a slash.
 
+
 class Solution:
+
     def simplifyPath(self, path: str) -> str:
         stack = []
         for elem in path.split('/'):

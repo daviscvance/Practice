@@ -8,9 +8,12 @@
 # Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3
 # Output: true
 
+from typing import List
+
+
 class Solution:
     # Binary Searches for each row | Time: O(m log n) | Space: O(1)
-    def searchMatrix(self, matrix: list[list[int]], target: int) -> bool:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         if target > matrix[-1][-1]:
             return False
         for row in matrix:
@@ -28,7 +31,7 @@ class Solution:
         return False
 
     # One Big Binary Search | Time: O(log m*n) | Space: O(1)
-    def searchMatrix(self, matrix: list[list[int]], target: int) -> bool:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         if target > matrix[-1][-1]:
             return False
 

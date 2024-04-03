@@ -14,11 +14,13 @@
 #         [7, <- 8, <- 9]
 
 from collections import deque
+from typing import List
+
 
 class Solution:
     # Time: O(n) | Space: O(n)
-    def spiralOrder(self, matrix: list[list[int]]) -> list[int]:
-        matrix = deque(matrix) # Avoid pop(0) of list every iteration.
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        matrix = deque(matrix)  # Avoid pop(0) of list every iteration.
         result = []
         while matrix:
             result += matrix.popleft()
@@ -26,4 +28,3 @@ class Solution:
             matrix = deque(zip(*matrix))
             matrix.reverse()
         return result
-

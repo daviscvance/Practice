@@ -9,18 +9,22 @@
 # Output: [[1,0,1],[0,0,0],[1,0,1]]
 
 from itertools import product
+from typing import List
+
 
 class Solution:
     # Marking in constant space | Time: O(2*m * 2*n) | Space: O(1)
-    def setZeroes(self, matrix: list[list[int]]) -> None:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
         rows, cols = len(matrix), len(matrix[0])
 
         for row, col in product(range(rows), range(cols)):
             if matrix[row][col]: continue  # Search for zeroes.
             for r in range(rows):  # Re-evaluate the whole row.
-                if matrix[r][col]: matrix[r][col] = '.'  # Mark non-zeroes in row.
+                if matrix[r][col]:
+                    matrix[r][col] = '.'  # Mark non-zeroes in row.
             for c in range(cols):  # Re-evaluate the whole column.
-                if matrix[row][c]: matrix[row][c] = '.'  # Mark non-zeroes in col.
+                if matrix[row][c]:
+                    matrix[row][c] = '.'  # Mark non-zeroes in col.
 
         # Convert markings to zeroes.
         for row, col in product(range(rows), range(cols)):
@@ -29,7 +33,7 @@ class Solution:
 
 class Solution:
     # Additional memory (hash sets) | Time: O(2*m*n) | Space: O(m+n)
-    def setZeroes(self, matrix: list[list[int]]) -> None:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
         rows, cols = len(matrix), len(matrix[0])
         r, c = set(), set()
 

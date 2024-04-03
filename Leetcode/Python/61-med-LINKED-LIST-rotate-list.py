@@ -10,15 +10,18 @@
 
 from typing import Optional
 
+
 class ListNode:
     # Definition for singly-linked list.
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
 
+
 class Solution:
     # Loop | Time: O(n) | Space: O(1)
-    def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+    def rotateRight(self, head: Optional[ListNode],
+                    k: int) -> Optional[ListNode]:
         if not head:
             return head
 
@@ -26,11 +29,13 @@ class Solution:
         curr, length = head, 1
         while curr.next:
             curr = curr.next
-            length += 1 
+            length += 1
         curr.next = head
 
-        # Move to new head after k rotations. 
-        k = length - (k % length) # Negate full rotations if k is longer than list length.
+        # Move to new head after k rotations.
+        k = length - (
+            k % length
+        )  # Negate full rotations if k is longer than list length.
         while k:
             curr = curr.next
             k -= 1
