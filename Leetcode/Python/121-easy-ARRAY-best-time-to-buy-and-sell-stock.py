@@ -10,6 +10,7 @@
 
 from typing import List
 
+
 class Solution:
     # Brute Force | Time: O(n^2) | Space: O(1)
     def maxProfit(self, prices: List[int]) -> int:

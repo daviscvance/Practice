@@ -10,15 +10,22 @@
 
 from typing import Optional, List
 
+
 class TreeNode:
-    def __init__(self, val=0, left: 'TreeNode' = None, right: 'TreeNode' = None):
+
+    def __init__(self,
+                 val=0,
+                 left: 'TreeNode' = None,
+                 right: 'TreeNode' = None):
         self.val = val
         self.left = left
         self.right = right
 
+
 class Solution:
     # Slicing + Recursion | Time: O(n^2) | Space: O(n)
-    def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+    def buildTree(self, preorder: List[int],
+                  inorder: List[int]) -> Optional[TreeNode]:
         if not inorder:
             return None
 
@@ -28,10 +35,13 @@ class Solution:
         root.right = self.buildTree(preorder, inorder[index + 1:])
         return root
 
+
 class Solution:
     # Dictionary + Recursion | Time: O(n) | Space: O(n)
     def buildTree(self, preorder: list[int], inorder: list[int]) -> TreeNode:
-        def arrayToSubtree(lower_bound: int = 0, upper_bound: int = len(inorder) - 1) -> TreeNode:
+
+        def arrayToSubtree(lower_bound: int = 0,
+                           upper_bound: int = len(inorder) - 1) -> TreeNode:
             """
             Recursively constructs the binary tree from the given segment of inorder traversal.
 
@@ -43,7 +53,7 @@ class Solution:
             TreeNode: The root node of the constructed binary subtree.
             """
             nonlocal pre_idx
-            
+
             if lower_bound > upper_bound:
                 return None  # No nodes left / empty inorder list.
 
@@ -55,7 +65,7 @@ class Solution:
             root.right = arrayToSubtree(in_map[root_val] + 1, upper_bound)
 
             return root
-            
+
         # Inorder map for the indexes per each value of the tree.
         in_map = {val: idx for idx, val in enumerate(inorder)}
         pre_idx = 0  # Index to use in the preorder array.

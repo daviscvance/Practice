@@ -10,6 +10,7 @@
 
 from typing import Optional
 
+
 class TreeNode:
     # Definition for a binary tree node.
     def __init__(self, val=0, left=None, right=None):
@@ -17,16 +18,17 @@ class TreeNode:
         self.left = left
         self.right = right
 
+
 class Solution(object):
     # Recursion | Time: O(n) | Space: O(n)
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+
         def isMirror(left, right):
             if left and right:
-                return (
-                    left.val == right.val
-                    and isMirror(left.left, right.right)  # Outer.
-                    and isMirror(left.right, right.left)  # Inner.
-                )    
+                return (left.val == right.val
+                        and isMirror(left.left, right.right)  # Outer.
+                        and isMirror(left.right, right.left)  # Inner.
+                        )
             else:  # Either left or right is None (or both are).
                 return left is right
 

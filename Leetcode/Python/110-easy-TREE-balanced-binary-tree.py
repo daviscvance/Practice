@@ -10,12 +10,14 @@
 
 from typing import Optional
 
+
 class TreeNode:
     # Definition for a binary tree node.
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
+
 
 class Solution:
     # PostOrder DFS Recursion | Time: O(n log n) | Space: O(h)
@@ -32,7 +34,6 @@ class Solution:
 
         return (
             # Height in subtrees do not differ by more than 1.
-            abs(height(root.left) - height(root.right)) < 2 
+            abs(height(root.left) - height(root.right)) < 2
             # Is the subtree balanced with the above condition?
-            and self.isBalanced(root.left)
-            and self.isBalanced(root.right))
+            and self.isBalanced(root.left) and self.isBalanced(root.right))

@@ -11,12 +11,19 @@
 from typing import Optional
 from collections import deque
 
+
 class Node:
-    def __init__(self, val: int = 0, left: 'Node' = None, right: 'Node' = None, next: 'Node' = None):
+
+    def __init__(self,
+                 val: int = 0,
+                 left: 'Node' = None,
+                 right: 'Node' = None,
+                 next: 'Node' = None):
         self.val = val
         self.left = left
         self.right = right
         self.next = next
+
 
 class Solution:
     # (2) Linked List Traversal | Time: O(n) | Space: O(1)
@@ -48,8 +55,8 @@ class Solution:
     def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
         if not root:
             return root
-        
-        q = deque([root]) 
+
+        q = deque([root])
         while q:
             batch = len(q)
             while batch:
@@ -68,8 +75,8 @@ class Solution:
     def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
         if not root:
             return root
-        
-        q = deque([root]) 
+
+        q = deque([root])
         dummy = Node()
         while q:
             batch = len(q)

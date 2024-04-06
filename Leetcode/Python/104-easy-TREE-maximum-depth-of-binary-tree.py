@@ -10,6 +10,7 @@
 
 from typing import Optional
 
+
 class TreeNode:
     # Definition for a binary tree node.
     def __init__(self, val=0, left=None, right=None):
@@ -17,9 +18,11 @@ class TreeNode:
         self.left = left
         self.right = right
 
+
 class Solution:
     # DFS | Time: O(n) | Space: O(h)
     def maxDepth(self, root: Optional[TreeNode]) -> int:
+
         def dfs(root: TreeNode, depth: int) -> int:
             if not root:
                 return depth

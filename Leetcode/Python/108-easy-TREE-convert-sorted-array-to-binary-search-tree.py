@@ -10,6 +10,7 @@
 
 from typing import List, Optional
 
+
 class TreeNode:
     # Definition for a binary tree node.
     def __init__(self, val=0, left=None, right=None):
@@ -17,13 +18,13 @@ class TreeNode:
         self.left = left
         self.right = right
 
+
 class Solution:
     # Recursion | Time: O(n log n) | Space: O(n)
     def sortedArrayToBST(self, nums: List[int]) -> Optional[TreeNode]:
         if not nums: return
 
         mid = len(nums) // 2
-        return TreeNode(
-            val = nums[mid], 
-            left = self.sortedArrayToBST(nums[:mid]),
-            right = self.sortedArrayToBST(nums[mid+1:]))
+        return TreeNode(val=nums[mid],
+                        left=self.sortedArrayToBST(nums[:mid]),
+                        right=self.sortedArrayToBST(nums[mid + 1:]))

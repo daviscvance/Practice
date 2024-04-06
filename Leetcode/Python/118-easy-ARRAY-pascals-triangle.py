@@ -10,6 +10,7 @@
 
 from typing import List
 
+
 class Solution:
     # DP | Time: O(n^2) | Space: O(1)
     def generate(self, numRows: int) -> List[List[int]]:
@@ -23,4 +24,3 @@ class Solution:
             triangle.append(level)
 
         return triangle
-    

@@ -10,12 +10,14 @@
 
 from typing import List, Optional
 
+
 class TreeNode:
     # Definition for a binary tree node.
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
+
 
 class Solution:
     # DFS | Time: O(n^2) | Space: O(n)
@@ -25,10 +27,13 @@ class Solution:
                 paths.append(list(path + [node.val]))
 
             # Add the node val to the current dfs path to avoid popping it from a stack.
-            self.dfs(node.left, remaining_sum - node.val, path + [node.val], paths)
-            self.dfs(node.right, remaining_sum - node.val, path + [node.val], paths)
+            self.dfs(node.left, remaining_sum - node.val, path + [node.val],
+                     paths)
+            self.dfs(node.right, remaining_sum - node.val, path + [node.val],
+                     paths)
 
-    def pathSum(self, root: Optional[TreeNode], target_sum: int) -> List[List[int]]:
+    def pathSum(self, root: Optional[TreeNode],
+                target_sum: int) -> List[List[int]]:
         path, paths = [], []
         self.dfs(root, target_sum, path, paths)
         return paths

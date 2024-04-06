@@ -10,12 +10,14 @@
 
 from typing import Optional
 
+
 class TreeNode:
     # Definition for a binary tree node.
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
+
 
 class Solution:
     # (1) Recursion DFS | Time: O(n) | Space: O(h) => O(log n) for perfectly balanced tree.
@@ -24,9 +26,8 @@ class Solution:
             target_sum -= root.val
             if not root.left and not root.right:  # Leaf node.
                 return target_sum == 0
-            return (
-                self.hasPathSum(root.left, target_sum) or
-                self.hasPathSum(root.right, target_sum))
+            return (self.hasPathSum(root.left, target_sum)
+                    or self.hasPathSum(root.right, target_sum))
         return False
 
     # (2) DFS Stack | Time: O(n) | Space: O(n)

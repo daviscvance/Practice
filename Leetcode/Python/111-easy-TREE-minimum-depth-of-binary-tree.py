@@ -11,12 +11,14 @@
 from collections import deque
 from typing import Optional
 
+
 class TreeNode:
     # Definition for a binary tree node.
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
+
 
 class Solution:
     # (2) DFS Recursion | Time: O(h) | Space: O(h)
@@ -28,7 +30,8 @@ class Solution:
         elif root.left and not root.right:
             return 1 + self.minDepth(root.left)
         else:
-            return min(1 + self.minDepth(root.left), 1 + self.minDepth(root.right))
+            return min(1 + self.minDepth(root.left),
+                       1 + self.minDepth(root.right))
 
     # (1) BFS iterative | Time: O(h) | Space: O(h)
     def minDepth(self, root: Optional[TreeNode]) -> int:
@@ -48,4 +51,3 @@ class Solution:
                 if node.right:
                     queue.append(node.right)
         return depth
-        

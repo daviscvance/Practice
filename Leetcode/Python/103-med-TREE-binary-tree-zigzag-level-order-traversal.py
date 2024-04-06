@@ -12,6 +12,7 @@
 from typing import List, Optional
 from collections import deque
 
+
 class TreeNode:
     # Definition for a binary tree node.
     def __init__(self, val=0, left=None, right=None):
@@ -19,13 +20,14 @@ class TreeNode:
         self.left = left
         self.right = right
 
+
 class Solution:
     # BFS Iterative | Time: O(n) | Space: O(n)
     def zigzagLevelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         level_order = []
         if not root:
             return level_order
-        
+
         bfs = [root]
         zig = False
         while bfs:
@@ -45,5 +47,3 @@ class Solution:
                 level_order.append(batch)
             else:  # Completed tree traversal.
                 return level_order
-                    
-                
