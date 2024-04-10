@@ -4,22 +4,19 @@
 # https://leetcode.com/problems/merge-triplets-to-form-target-triplet
 #
 # Find if the target is obtainable by applying MAX() over the triplets.
+# def mergeTriplets(self, triplets: List[List[int]], target: List[int]) -> bool:
+# Input: triplets = [[2,5,3],[1,8,4],[1,7,5]], target = [2,7,5]
+# Output: true
+
+from typing import List
+
 
 class Solution:
-    def mergeTriplets(self, triplets: list[list[int]], target: list[int]) -> bool:
-        match = [False] * 3
-
-        for a, b, c in triplets:
-            # If the maximum overflows the target, skip it.
-            if a > target[0] or b > target[1] or c > target[2]:
-                continue
-
-            # Otherwise, perform MAX() and flip the target switch.
-            if a == target[0]:
-                match[0] = True
-            if b == target[1]:
-                match[1] = True
-            if c == target[2]:
-                match[2] = True
-
-        return all(match)
+    # Single pass | Time: O(n) | Space: O(1)
+    def mergeTriplets(self, triplets: List[List[int]],
+                      target: List[int]) -> bool:
+        a = b = c = 0
+        for x, y, z in triplets:
+            if x <= target[0] and y <= target[1] and z <= target[2]:
+                a, b, c = max(a, x), max(b, y), max(c, z)
+        return [a, b, c] == target
