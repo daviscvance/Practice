@@ -11,15 +11,17 @@
 from __future__ import annotations
 from typing import Optional
 
+
 class TreeNode:
-    def __init__(
-            self,
-            val: int = 0,
-            left: Optional[TreeNode] = None,
-            right: Optional[TreeNode] = None) -> None:
+
+    def __init__(self,
+                 val: int = 0,
+                 left: Optional[TreeNode] = None,
+                 right: Optional[TreeNode] = None) -> None:
         self.val = val
         self.left = left
         self.right = right
+
 
 class Solution:
     # Recursive DFS | Time: O(n) | Space: O(n)
@@ -30,5 +32,5 @@ class Solution:
         total += node.val  # Add new digit.
         if not node.left and not node.right:
             return total
-        return self.sumNumbers(node.left, total) + self.sumNumbers(node.right, total)
-        
+        return self.sumNumbers(node.left, total) + self.sumNumbers(
+            node.right, total)

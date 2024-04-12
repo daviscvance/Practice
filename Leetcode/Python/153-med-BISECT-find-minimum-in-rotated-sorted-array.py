@@ -8,6 +8,7 @@
 # Input: nums = [3,4,5,1,2]
 # Output: 1
 
+
 class Solution:
     # Binary Search | Time: O(log n) | Space: O(1)
     def findMin(self, nums: list[int]) -> int:

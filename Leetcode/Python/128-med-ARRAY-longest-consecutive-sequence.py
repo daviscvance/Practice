@@ -10,6 +10,7 @@
 
 from typing import List
 
+
 class Solution:
     # Sort set | Time: O(n log n) | Space: O(n)
     def longestConsecutive(self, nums: List[int]) -> int:
@@ -19,7 +20,7 @@ class Solution:
         nums = sorted(set(nums))
         consecutive = maximum = 1
         for i, num in enumerate(nums):
-            if num == nums[i-1] + 1:
+            if num == nums[i - 1] + 1:
                 consecutive += 1
                 maximum = max(consecutive, maximum)
             else:

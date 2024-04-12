@@ -10,12 +10,14 @@
 
 from typing import List, Optional
 
+
 class TreeNode:
     # Definition for a binary tree node.
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
+
 
 class Solution:
     # BFS iterative | Time: O(n) | Space: O(max(h|w))
@@ -24,7 +26,7 @@ class Solution:
 
         bfs = [root]
         while bfs:
-            curr_level, next_level = [], [] 
+            curr_level, next_level = [], []
             for node in bfs:
                 if node:
                     curr_level.append(node.val)

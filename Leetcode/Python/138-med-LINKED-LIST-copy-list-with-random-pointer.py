@@ -10,12 +10,14 @@
 
 from typing import Optional
 
+
 class Node:
     # Definition for a Node.
     def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
         self.val = int(x)
         self.next = next
         self.random = random
+
 
 class Solution:
     # Hash Table | Time: O(n) | Space: O(n)
@@ -24,7 +26,7 @@ class Solution:
         pointer = head
         if not head:
             return head
-            
+
         while pointer:  # Collect nodes and deep copy their values.
             converter[pointer] = Node(pointer.val)
             pointer = pointer.next

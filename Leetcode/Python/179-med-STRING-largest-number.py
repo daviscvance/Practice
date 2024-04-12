@@ -5,9 +5,14 @@
 #
 # Given a positive integer list, arrange them into the largest number.
 
+from typing import List
+
+
 class LargerNumKey(str):
+
     def __lt__(x, y):
-        return x+y > y+x
+        return x + y > y + x
+
 
 class Solution:
     # Sort Key | Time: O(n log n) | Space: O(n)

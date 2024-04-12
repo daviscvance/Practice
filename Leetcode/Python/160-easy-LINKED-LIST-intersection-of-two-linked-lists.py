@@ -10,15 +10,18 @@
 
 from typing import Optional
 
+
 class ListNode:
     # Definition for singly-linked list.
     def __init__(self, x):
         self.val = x
         self.next = None
 
+
 class Solution:
     # (3) Hash Set | Time: O(n+m) | Space: O(n+m)
-    def getIntersectionNode(self, a: ListNode, b: ListNode) -> Optional[ListNode]:
+    def getIntersectionNode(self, a: ListNode,
+                            b: ListNode) -> Optional[ListNode]:
         visited = set()
         while a or b:
             if a:
@@ -34,7 +37,8 @@ class Solution:
         return
 
     # (1) Hash Set | Time: O(n+m) | Space: O(n)
-    def getIntersectionNode(self, a: ListNode, b: ListNode) -> Optional[ListNode]:
+    def getIntersectionNode(self, a: ListNode,
+                            b: ListNode) -> Optional[ListNode]:
         visited = set()
         while a:
             visited.add(a)
@@ -47,7 +51,8 @@ class Solution:
         return
 
     # (2) Floyd's Cycle Finder | Time: O(n+m) | Space: O(1)
-    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
+    def getIntersectionNode(self, headA: ListNode,
+                            headB: ListNode) -> Optional[ListNode]:
         currentA, currentB = headA, headB
         while currentA != currentB:
             currentA = currentA.next if currentA else headB

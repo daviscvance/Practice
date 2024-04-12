@@ -10,10 +10,12 @@
 
 from typing import List
 
+
 class Solution:
     # Slicing | Time: O(n) | Space: O(n) (Allocating space for slices.)
     def rotate(self, nums: List[int], k: int) -> None:
-        k %= len(nums)  # To handle cases where k is larger than the array length.
+        k %= len(
+            nums)  # To handle cases where k is larger than the array length.
         nums[:] = nums[-k:] + nums[:-k]
 
     # Cyclic Swapping | Time: O(n) | Space: O(1)
@@ -36,6 +38,7 @@ class Solution:
 
     # Reversing | Time: O(n) | Space: O(1)
     def rotate(self, nums: List[int], k: int) -> None:
+
         def reverse(start: int, end: int):
             while start < end:
                 nums[start], nums[end] = nums[end], nums[start]

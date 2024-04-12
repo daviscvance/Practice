@@ -10,6 +10,7 @@
 
 from typing import List
 
+
 class Solution:
     # Two Pointer | Time: O(n) | Space: O(1)
     def twoSum(self, numbers: List[int], target: int) -> List[int]:

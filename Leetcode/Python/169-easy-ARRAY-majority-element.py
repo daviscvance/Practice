@@ -11,6 +11,7 @@
 from collections import defaultdict, Counter
 from typing import List
 
+
 class Solution:
     # Counter w/ early stop | Time: O(n) | Space: O(n)
     def majorityElement(self, nums: List[int]) -> int:

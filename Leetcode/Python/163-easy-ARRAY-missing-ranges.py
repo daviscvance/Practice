@@ -11,14 +11,19 @@
 from itertools import pairwise
 from typing import List
 
+
 class Solution:
     # Constant space loop | Time: O(n) | Space: O(1)
-    def findMissingRanges(self, nums: List[int], lower: int, upper: int) -> List[List[int]]:
+    def findMissingRanges(self, nums: List[int], lower: int,
+                          upper: int) -> List[List[int]]:
         # Return a list of lows and highs for each pairwise if they are bounded correctly.
-        return ([l+1, r-1] for l, r in pairwise([lower-1] + nums + [upper+1]) if l+1 <= r-1)
+        return ([l + 1, r - 1]
+                for l, r in pairwise([lower - 1] + nums + [upper + 1])
+                if l + 1 <= r - 1)
 
     # Stored result loop | Time: O(n) | Space: O(n)
-    def findMissingRanges(self, nums: List[int], lower: int, upper: int) -> List[List[int]]:
+    def findMissingRanges(self, nums: List[int], lower: int,
+                          upper: int) -> List[List[int]]:
         missing = []
         for n in nums + [upper + 1]:
             if n > lower:

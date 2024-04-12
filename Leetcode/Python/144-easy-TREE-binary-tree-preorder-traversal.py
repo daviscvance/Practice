@@ -10,12 +10,14 @@
 
 from typing import List, Optional
 
+
 class TreeNode:
     # Definition for a binary tree node.
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
+
 
 class Solution:
     # (2) Stack | Time: O(n) | Space: O(n)
@@ -35,10 +37,13 @@ class Solution:
     # (1) Recursion | Time: O(n) | Space: O(n)
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         tree_preorder = []
-        def helper(node: Optional[TreeNode], collection: List[int]) -> List[int]:
+
+        def helper(node: Optional[TreeNode],
+                   collection: List[int]) -> List[int]:
             if node:
                 collection.append(node.val)
                 helper(node.left, collection)
                 helper(node.right, collection)
             return collection
+
         return helper(root, tree_preorder)
