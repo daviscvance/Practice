@@ -8,6 +8,7 @@
 # Input: root = [2,1,3], p = 1
 # Output: 2
 
+
 class TreeNode:
     # Definition for a binary tree node.
     def __init__(self, x):
@@ -15,11 +16,14 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 from typing import Optional
+
 
 class Solution:
     # Loop | Time: O(log n -> n) | Space: O(1)
-    def inorderSuccessor(self, root: TreeNode, p: TreeNode) -> Optional[TreeNode]:
+    def inorderSuccessor(self, root: TreeNode,
+                         p: TreeNode) -> Optional[TreeNode]:
         successor = None
         while root:
             if p.val >= root.val:

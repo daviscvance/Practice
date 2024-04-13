@@ -10,11 +10,13 @@
 
 from typing import Optional
 
+
 class ListNode:
     # Definition for singly-linked list.
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
+
 
 class Solution:
     # (2) Stack | Time: O(n) | Space: O(n)
@@ -30,7 +32,7 @@ class Solution:
                 return False
             curr = curr.next
         return True
-            
+
     # (1) Two Pointer | Time: O(n) | Space: O(1)
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
         slow = fast = head

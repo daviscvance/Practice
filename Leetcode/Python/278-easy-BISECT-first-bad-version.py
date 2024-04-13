@@ -11,6 +11,7 @@
 # Input: n = 5, bad = 4
 # Output: 4
 
+
 class Solution:
     # Bisect left | Time: O(log n) | Space: O(1)
     def firstBadVersion(self, n: int) -> int:

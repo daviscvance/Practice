@@ -4,7 +4,8 @@
 # https://leetcode.com/problems/basic-calculator-ii/
 #
 # Evaluate string expressions and return their value (without built-in eval).
-# def calculate(self, string: str) -> int:  
+# def calculate(self, string: str) -> int:
+
 
 class Solution:
     # No Auxillary Space | Time: O(n) | Space: O(1)

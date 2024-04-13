@@ -10,6 +10,7 @@
 
 from typing import List
 
+
 class Solution:
     # Prefix Product | Time: O(n) | Space: O(n)
     def productExceptSelf(self, nums: List[int]) -> List[int]:

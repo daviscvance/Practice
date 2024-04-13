@@ -6,6 +6,7 @@
 # Implement a FIFO queue using two stacks.
 # The queue should support normal functions: push, peek,pop, and empty.
 
+
 class MyQueue:
     # Two Stacks | Time: O(1) | Space: O(n)
     def __init__(self):
@@ -70,7 +71,6 @@ class MyQueue:
 #     def empty(self) -> bool:
 #         '''Determine if the stack is empty.'''
 #         return not self.stack
-        
 
 # # Your MyQueue object will be instantiated and called as such:
 # # obj = MyQueue()

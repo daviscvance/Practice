@@ -11,6 +11,7 @@
 from heapq import heappush, heappushpop, heapify
 from typing import List
 
+
 class Solution:
     # Heap | Time: O(n log k) | Space: O(k)
     def findKthLargest(self, nums: List[int], k: int) -> int:

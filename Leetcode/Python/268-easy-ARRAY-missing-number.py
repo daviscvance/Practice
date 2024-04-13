@@ -10,6 +10,7 @@
 
 from typing import List
 
+
 class Solution:
     # Set theory | Time: O(n) | Space: O(n)
     def missingNumber(self, nums: List[int]) -> int:

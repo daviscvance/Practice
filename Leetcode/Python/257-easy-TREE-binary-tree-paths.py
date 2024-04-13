@@ -10,12 +10,14 @@
 
 from typing import Optional, List
 
+
 class TreeNode:
     # Definition for a binary tree node.
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
+
 
 class Solution:
     # DFS Recursion | Time: O(n*h) | Space: O(h)
@@ -32,6 +34,6 @@ class Solution:
             else:
                 pathway(node.left, traversal + [str(node.val)])
                 pathway(node.right, traversal + [str(node.val)])
-        
+
         pathway(root, [])
         return [*map('->'.join, path)]

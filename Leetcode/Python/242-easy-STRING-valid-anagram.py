@@ -7,6 +7,7 @@
 
 from collections import Counter
 
+
 class Solution:
     # Sorting | Time: O(n log n) | Space: O(n)
     def isAnagram(self, s: str, t: str) -> bool:

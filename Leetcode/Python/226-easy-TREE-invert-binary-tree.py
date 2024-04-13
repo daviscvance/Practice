@@ -10,12 +10,14 @@
 
 from typing import Optional
 
+
 class TreeNode:
     # Definition for a binary tree node.
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
+
 
 class Solution:
     # DFS Recursion | Time: O(n) | Space: O(h)
@@ -34,9 +36,11 @@ class Solution:
     # DFS Recursion | Time: O(n) | Space: O(h)
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         if root:
-            root.left, root.right = self.invertTree(root.right), self.invertTree(root.left)
+            root.left, root.right = self.invertTree(
+                root.right), self.invertTree(root.left)
         return root
 
     # DFS Recursion | Time: O(n) | Space: O(h)
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        return TreeNode(root.val, self.invertTree(root.right), self.invertTree(root.left)) if root else None
+        return TreeNode(root.val, self.invertTree(root.right),
+                        self.invertTree(root.left)) if root else None

@@ -8,9 +8,12 @@
 # Input: nums = [1,2,3,4]
 # Output: false
 
+from typing import List
+
+
 class Solution:
     # Hash Map | Time: O(n) | Space: O(n)
-    def containsDuplicate(self, nums: list[int]) -> bool:
+    def containsDuplicate(self, nums: List[int]) -> bool:
         hashmap = {}
         for num in nums:
             if not hashmap.get(num, None):
@@ -20,17 +23,17 @@ class Solution:
         return False
 
     # (*) Hash Set | Time: O(n) | Space: O(n)
-    def containsDuplicate(self, nums: list[int]) -> bool:
+    def containsDuplicate(self, nums: List[int]) -> bool:
         unq = set()
         for num in nums:
             if num not in unq:
                 unq.add(num)
             else:
-                return True            
+                return True
         return False
 
     # Hash Set Size | Time: O(n) | Space: O(n)
-    def containsDuplicate(self, nums: list[int]) -> bool:
+    def containsDuplicate(self, nums: List[int]) -> bool:
         unq = set(nums)
         if len(unq) != len(nums):
             return True

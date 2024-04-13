@@ -11,10 +11,13 @@
 from collections import Counter
 from typing import List
 
+
 class Solution:
     # Counter | Time: O(n) | Space: O(n)
     def majorityElement(self, nums: List[int]) -> List[int]:
-        return [k for k, freq in Counter(nums).items() if freq > len(nums)//3]
+        return [
+            k for k, freq in Counter(nums).items() if freq > len(nums) // 3
+        ]
 
     # Boyer-Moore Voting Algo | Time: O(n) | Space: O(1)
     def majorityElement(self, nums: List[int]) -> List[int]:

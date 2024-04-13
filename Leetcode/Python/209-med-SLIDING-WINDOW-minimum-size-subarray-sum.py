@@ -5,9 +5,10 @@
 #
 # Return the shortest subarray whose sum is >= target.
 
+
 class Solution:
     # Sliding Window | Time: O(n) | Space: O(1)
-    def minSubArrayLen(self, target: int, nums: list[int]) -> float:
+    def minSubArrayLen(self, target: int, nums: List[int]) -> float:
         left = total = 0
         shortest = inf = float('inf')
         for right in range(len(nums)):

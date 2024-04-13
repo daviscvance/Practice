@@ -11,7 +11,9 @@
 # Output
 # [null,null,null,null,false,true,true,true]
 
+
 class WordDictionary:
+
     def __init__(self):
         self.root = {}
 
@@ -25,7 +27,7 @@ class WordDictionary:
 
     def search(self, word: str) -> bool:
         return self.dfs(self.root, word)
-    
+
     def dfs(self, node, word, start: int = 0):
         # Check end result.
         if start == len(word):
@@ -44,6 +46,7 @@ class WordDictionary:
         if word[start] not in node:
             return False
         return self.dfs(node[word[start]], word, start + 1)
+
 
 # Your WordDictionary object will be instantiated and called as such:
 # obj = WordDictionary()

@@ -6,11 +6,12 @@
 from itertools import islice
 from operator import itemgetter
 from heapq import heapreplace, heappush
+from typing import List
 
 
 class Solution:
     # Heap + Interval | Time: O(nlogn) | Space: O(n)
-    def minMeetingRooms(self, intervals: list[list[int]]) -> int:
+    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
         start = itemgetter(0)
         end = itemgetter(1)
         if not intervals:

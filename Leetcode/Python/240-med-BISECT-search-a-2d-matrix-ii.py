@@ -9,9 +9,12 @@
 # target = 5
 # Output: true
 
+from typing import List
+
+
 class Solution:
     # Binary Search each row | Time: O(m log n) | Space: O(1)
-    def searchMatrix(self, matrix: list[list[int]], target: int) -> bool:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         rows, cols = len(matrix), len(matrix[0])
 
         for row in matrix:
@@ -28,7 +31,7 @@ class Solution:
         return False
 
     # Manhattan Walk | Time: O(m + n) | Space: O(1)
-    def searchMatrix(self, matrix: list[list[int]], target: int) -> bool:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         rows, cols = len(matrix), len(matrix[0])
         R, C = rows - 1, 0
 

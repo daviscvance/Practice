@@ -2,13 +2,14 @@
 # Medium
 # Array, Two Pointers, Binary Search, Bit Manipulation
 # https://leetcode.com/problems/find-the-duplicate-number
-# 
+#
 # Find the duplicate positive integer in an immutable array w/o using extra memory.
 # def findDuplicate(self, nums: List[int]) -> int:
 # Input: nums = [1,3,4,2,2]
 # Output: 2
 
 from typing import List
+
 
 class Solution:
     # Double Loop | Time: O(n^2) | Space: O(1)
@@ -71,5 +72,5 @@ class Solution:
         while slow != fast:
             slow = nums[slow]
             fast = nums[fast]
-        
+
         return fast

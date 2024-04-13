@@ -10,7 +10,9 @@
 
 from typing import List
 
+
 class Solution:
+
     def moveZeroes(self, nums: List[int]) -> None:
         curr = 0
         for idx, num in enumerate(nums):
