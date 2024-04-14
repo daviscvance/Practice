@@ -10,6 +10,7 @@
 
 from collections import Counter
 
+
 class Solution:
     # Stack | Time: O(n) | Space: O(k)
     def removeDuplicateLetters(self, string: str) -> str:

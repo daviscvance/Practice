@@ -18,6 +18,7 @@
 
 from bisect import bisect_left
 
+
 class Solution:
     # Bisect left | Time: O(log n) | Space: O(1)
     def guessNumber(self, n: int) -> int:

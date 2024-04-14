@@ -7,6 +7,7 @@
 # s = "3[a2[c]]"
 # def decodeString(self, s: str) -> str:
 
+
 class Solution:
     # Stack | Time: O(n) | Space: O(n)
     def decodeString(self, string: str) -> str:
@@ -20,7 +21,7 @@ class Solution:
                 repeat = stack.pop()
                 prev_str = stack.pop()
                 curr_str = prev_str + (repeat * curr_str)
-            elif char.isdigit():     
+            elif char.isdigit():
                 curr_num += char
             else:
                 curr_str += char

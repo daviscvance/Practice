@@ -7,6 +7,7 @@
 # Input: num = "1432219", k = 3
 # Output: "1219"
 
+
 class Solution:
     # Stack | Time: O(n) | Space O(n-k)
     def removeKdigits(self, num: str, k: int) -> str:

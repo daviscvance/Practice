@@ -7,6 +7,7 @@
 
 from collections import Counter
 
+
 class Solution:
     # Hash Table | Time: O(n+m) | Space: O(n+m)
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
@@ -14,6 +15,7 @@ class Solution:
         # Intersection of note and mgz Counter objects is equal to note Counter object determines
         # all note letters are available in magazine.
         return note & mgz == note
+
 
 # class Solution:
 #     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
