@@ -10,6 +10,7 @@
 
 from typing import List
 
+
 class Solution:
     # Set | Time: O(n) | Space: O(n)
     def findDuplicates(self, nums: List[int]) -> List[int]:
@@ -27,14 +28,14 @@ class Solution:
         nums.sort()
         duplicates = list()
         for i in range(1, len(nums)):
-            if nums[i] == nums[i-1]:
+            if nums[i] == nums[i - 1]:
                 duplicates.append(nums[i])
         return duplicates
 
     # Negative Marking | Time: O(n) | Space: O(1)
     def findDuplicates(self, nums: List[int]) -> List[int]:
         duplicates = []
-        # Mark indices negative, duplicates will become positive. 
+        # Mark indices negative, duplicates will become positive.
         for num in nums:
             idx = abs(num) - 1
             nums[idx] *= -1

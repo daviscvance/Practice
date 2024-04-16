@@ -11,6 +11,7 @@
 
 from typing import Optional
 
+
 class TreeNode:
     # Definition for a binary tree node.
     def __init__(self, val=0, left=None, right=None):
@@ -18,10 +19,12 @@ class TreeNode:
         self.left = left
         self.right = right
 
+
 class Solution:
+
     def successor(self, root: TreeNode) -> int:
         node = root.right
-        while node.left:  
+        while node.left:
             node = node.left
         return node.val
 
@@ -32,7 +35,8 @@ class Solution:
         return node.val
 
     # Recursion | Time: O(log n) | Space: O(log n => H)
-    def deleteNode(self, root: Optional[TreeNode], key: int) -> Optional[TreeNode]:
+    def deleteNode(self, root: Optional[TreeNode],
+                   key: int) -> Optional[TreeNode]:
         if not root:
             return root
 

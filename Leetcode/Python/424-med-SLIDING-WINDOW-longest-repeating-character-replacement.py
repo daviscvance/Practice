@@ -8,14 +8,15 @@
 
 from collections import Counter
 
+
 class Solution:
     # Hash Set + Sliding Window | Time: O(n) | Space: O(n)
     def characterReplacement(self, s: str, k: int) -> int:
         l, longest = 0, 0
         for r in range(1, len(s)):
             # Construct a new count of the letters in window.
-            seen = Counter(s[l:r+1])
-            
+            seen = Counter(s[l:r + 1])
+
             # A long chain can be created if
             #  the cells within the sliding window
             #  minus the highest frequency letter we've seen
@@ -23,7 +24,7 @@ class Solution:
             cells_count = r - l + 1
             if cells_count - max(seen.values()) <= k:
                 longest = max(longest, cells_count)
-                
+
             # If we maxxed out on the long chains we can create in this window,
             # continue progressing the left side.
             else:

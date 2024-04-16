@@ -10,15 +10,18 @@
 
 from typing import Optional
 
+
 class ListNode:
     # Definition for singly-linked list.
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
 
+
 class Solution:
     # Mathy | Time: O(n+m) | Space: O(max(n, m))
-    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+    def addTwoNumbers(self, l1: Optional[ListNode],
+                      l2: Optional[ListNode]) -> Optional[ListNode]:
         # Time: O(n) | Space: O(1)
         def collect_contribution(node: Optional[ListNode]) -> int:
             '''Collect contributions from a linked list, with respect to placement and lengths.'''
@@ -27,7 +30,7 @@ class Solution:
                 total = (total * 10) + node.val
                 node = node.next
             return total
-        
+
         total = collect_contribution(l1) + collect_contribution(l2)
         if not total:
             return ListNode()

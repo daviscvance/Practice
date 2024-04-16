@@ -7,12 +7,15 @@
 # def nextGreaterElements(self, nums: List[int]) -> List[int]:
 # Input: nums = [1,2,3,4,3]
 # Output: [2,3,4,-1,4]
-            
+
 from collections import deque, namedtuple
 from itertools import chain
+from typing import List
+
 
 class Solution:
-    def nextGreaterElements(self, nums: list[int]) -> list[int]:
+
+    def nextGreaterElements(self, nums: List[int]) -> List[int]:
         stack = deque()
         result = [-1] * len(nums)
         Element = namedtuple('Element', 'index,value')

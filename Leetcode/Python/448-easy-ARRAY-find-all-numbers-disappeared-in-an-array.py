@@ -10,6 +10,7 @@
 
 from typing import List
 
+
 class Solution:
     # Hash set | Time: O(n) | Space: O(n)
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:

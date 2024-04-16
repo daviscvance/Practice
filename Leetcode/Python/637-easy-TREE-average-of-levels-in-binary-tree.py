@@ -11,6 +11,7 @@
 from collections import deque
 from typing import List, Optional
 
+
 class TreeNode:
     # Definition for a binary tree node.
     def __init__(self, val=0, left=None, right=None):
@@ -37,6 +38,3 @@ class Solution:
                     queue.append(node.right)
             level_averages.append(level_sum / nodes)
         return level_averages
-                
-
-        

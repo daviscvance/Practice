@@ -10,6 +10,7 @@
 
 from typing import List
 
+
 class Solution:
     # Greedy | Time: O(n) | Space: O(1)
     def findLengthOfLCIS(self, nums: List[int]) -> int:

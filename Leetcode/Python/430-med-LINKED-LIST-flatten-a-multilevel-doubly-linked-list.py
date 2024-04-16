@@ -9,6 +9,7 @@
 
 from typing import Optional
 
+
 class Node:
     # Definition for a Node.
     def __init__(self, val, prev, next, child):
@@ -17,7 +18,9 @@ class Node:
         self.next = next
         self.child = child
 
+
 class Solution:
+
     def flatten(self, head: 'Optional[Node]') -> 'Optional[Node]':
         if not head:
             return head
@@ -42,4 +45,3 @@ class Solution:
             main.child = None  # Sever sub-level.
 
         return head
-

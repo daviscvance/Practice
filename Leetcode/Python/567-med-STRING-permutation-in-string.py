@@ -7,13 +7,14 @@
 
 from collections import Counter
 
+
 class Solution:
 
     def checkInclusion(self, s1: str, s2: str) -> bool:
-        s1_ct, s1_len = Counter(s1), len(s1)   
+        s1_ct, s1_len = Counter(s1), len(s1)
 
         for i in range(len(s2)):
-            if s2[i] in s1_ct: 
+            if s2[i] in s1_ct:
                 s1_ct[s2[i]] -= 1
             if i >= s1_len and s2[i - s1_len] in s1_ct:
                 s1_ct[s2[i - s1_len]] += 1

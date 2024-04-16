@@ -10,6 +10,7 @@
 
 from typing import List
 
+
 class Solution:
     # Double Loop Check | Time*: O(n^2) | Space: O(1)
     def subarraySum(self, nums: List[int], k: int) -> int:
@@ -17,7 +18,7 @@ class Solution:
         N = len(nums)
         for start in range(N):
             curr_sum = 0
-            for end in range(start, N): 
+            for end in range(start, N):
                 curr_sum += nums[end]
                 if curr_sum == k:
                     ct += 1

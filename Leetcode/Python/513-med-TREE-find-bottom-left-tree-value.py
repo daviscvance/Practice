@@ -12,24 +12,30 @@ from __future__ import annotations
 from collections import namedtuple
 from typing import Optional
 
+
 class TreeNode:
-    def __init__(
-            self,
-            val: int = 0,
-            left: Optional[TreeNode] = None,
-            right: Optional[TreeNode] = None) -> None:
+
+    def __init__(self,
+                 val: int = 0,
+                 left: Optional[TreeNode] = None,
+                 right: Optional[TreeNode] = None) -> None:
         self.val = val
         self.left = left
         self.right = right
 
+
 LeftMax = namedtuple("LeftMax", "val depth")
+
 
 class Solution:
     # DFS postorder traversal | Time: O(n) | Space: O(h)
     def findBottomLeftValue(self, root: Optional[TreeNode]) -> int:
+
         def dfs_postorder(node: TreeNode = root, depth: int = 0) -> LeftMax:
-            left_max = dfs_postorder(node.left, depth + 1) if node.left else None
-            right_max = dfs_postorder(node.right, depth + 1) if node.right else None
+            left_max = dfs_postorder(node.left, depth +
+                                     1) if node.left else None
+            right_max = dfs_postorder(node.right, depth +
+                                      1) if node.right else None
             if not (left_max or right_max):
                 return LeftMax(node.val, depth)
             if not right_max:

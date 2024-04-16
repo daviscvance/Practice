@@ -8,9 +8,12 @@
 # Output: 1
 
 from operator import itemgetter
+from typing import List
+
 
 class Solution:
-    def eraseOverlapIntervals(self, intervals: list[list[int]]) -> int:
+
+    def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
         get_start, get_end = itemgetter(0), itemgetter(1)
         intervals.sort(key=get_end)
         prev = float('-inf')

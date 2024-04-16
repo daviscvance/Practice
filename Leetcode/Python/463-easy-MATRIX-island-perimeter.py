@@ -3,7 +3,7 @@
 # Array, Depth-First Search, Breadth-First Search, Matrix
 # https://leetcode.com/problems/island-perimeter
 #
-# Calculate the perimieter of a contiguous island. 
+# Calculate the perimieter of a contiguous island.
 # def islandPerimeter(self, grid: List[List[int]]) -> int:
 # Input: grid = [[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]
 # Output: 16
@@ -12,12 +12,14 @@ from collections import deque, namedtuple
 from itertools import product
 from typing import List
 
+
 class Solution:
     # BFS | Time: O(n) | Space: O(n)
     def islandPerimeter(self, grid: List[List[int]]) -> int:
         perimeter = 0
         R, C = len(grid), len(grid[0])
         Cell = namedtuple('Cell', ['x', 'y'])
+
         def isIsland(x, y):
             return 0 <= x < R and 0 <= y < C and grid[x][y]
 
@@ -45,14 +47,15 @@ class Solution:
     def islandPerimeter(self, grid: list[list[int]]) -> int:
         perimeter = 0
         R, C = len(grid), len(grid[0])
+
         def isIsland(x, y):
             return 0 <= x < R and 0 <= y < C and grid[x][y]
 
         # For island cells, count the water edges.
         for row, col in product(range(R), range(C)):
             if grid[row][col]:
-                for sr, sc in [(-1, 0), (0, -1), (0, 1), (1, 0)]:  # Grid Search.
+                for sr, sc in [(-1, 0), (0, -1), (0, 1),
+                               (1, 0)]:  # Grid Search.
                     if not isIsland(row + sr, col + sc):
                         perimeter += 1
         return perimeter
-    

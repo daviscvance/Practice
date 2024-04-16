@@ -11,19 +11,23 @@
 from __future__ import annotations
 from typing import Optional
 
+
 class TreeNode:
-    def __init__(
-            self,
-            val: int = 0,
-            left: Optional[TreeNode] = None,
-            right: Optional[TreeNode] = None) -> None:
+
+    def __init__(self,
+                 val: int = 0,
+                 left: Optional[TreeNode] = None,
+                 right: Optional[TreeNode] = None) -> None:
         self.val = val
         self.left = left
         self.right = right
 
+
 class Solution:
     # Recursion | Time: O(n) | Space: O(n)
-    def trimBST(self, root: Optional[TreeNode], low: int, high: int) -> Optional[TreeNode]:
+    def trimBST(self, root: Optional[TreeNode], low: int,
+                high: int) -> Optional[TreeNode]:
+
         def removeBranch(node: Optional[TreeNode]):
             if not node: return node
 

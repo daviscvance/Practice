@@ -7,6 +7,7 @@
 
 from collections import Counter
 
+
 class Solution:
     # Hash Map | Time: O(n) | Space: O(uniq.char)
     def longestPalindrome(self, string: str) -> int:
@@ -14,5 +15,7 @@ class Solution:
 
         # Count up pairs of characters to utilize for a palindrome, then if there are any odds to
         # serve as a centerpiece, return these as the total length.
-        return sum((val // 2) * 2 for val in map_char.values()) + any(
-            val % 2 for val in map_char.values())
+        return sum(
+            (val // 2) * 2
+            for val in map_char.values()) + any(val % 2
+                                                for val in map_char.values())

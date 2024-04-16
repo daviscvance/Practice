@@ -10,6 +10,7 @@
 
 from typing import List
 
+
 class Solution:
     # Prefix Sum | Time: O(n) | Space: O(n)
     def findMaxLength(self, nums: List[int]) -> int:

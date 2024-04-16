@@ -11,12 +11,14 @@
 from typing import Optional
 from collections import defaultdict
 
+
 class TreeNode:
     # Definition for a binary tree node.
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
+
 
 class Solution:
     # PreOrder DFS | Time: O(n) | Space: O(n)
@@ -38,7 +40,7 @@ class Solution:
                 # Process subtrees.
                 paths += dfs(node.left, curr_sum) + dfs(node.right, curr_sum)
 
-                # Do not use this current sum while processesing a parallel subtree after its 
+                # Do not use this current sum while processesing a parallel subtree after its
                 # been explored.
                 prefix_sum[curr_sum] -= 1
             return paths

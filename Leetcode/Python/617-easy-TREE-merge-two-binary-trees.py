@@ -11,6 +11,7 @@
 
 from typing import Optional
 
+
 class TreeNode:
     # Definition for a binary tree node.
     def __init__(self, val=0, left=None, right=None):
@@ -18,9 +19,11 @@ class TreeNode:
         self.left = left
         self.right = right
 
+
 class Solution:
     # Preorder Traversal Recursion | Time: O(n) | Space: O(n)
-    def mergeTrees(self, r1: Optional[TreeNode], r2: Optional[TreeNode]) -> Optional[TreeNode]:
+    def mergeTrees(self, r1: Optional[TreeNode],
+                   r2: Optional[TreeNode]) -> Optional[TreeNode]:
         if not r1:
             return r2
         elif not r2:

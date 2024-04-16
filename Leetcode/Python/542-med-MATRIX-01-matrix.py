@@ -10,14 +10,15 @@
 
 from collections import deque
 from itertools import product
+from typing import List
+
 
 class Solution:
     # BFS queue | Time: O(m*n) | Space O(m*n)
-    def updateMatrix(self, matrix: list[list[int]]) -> list[list[int]]:
+    def updateMatrix(self, matrix: List[List[int]]) -> List[List[int]]:
         rows, cols = len(matrix), len(matrix[0])
         directions = [[0, +1], [0, -1], [1, 0], [-1, 0]]
         queue = deque()
-
 
         for x, y in product(range(rows), range(cols)):
             if not matrix[x][y]:  # Zero-coordinate.
@@ -40,5 +41,3 @@ class Solution:
                         # it may lead to more unmarked coordinates that do not touch any zeroes.
                         queue.appendleft((neighbor_x, neighbor_y))
         return matrix
-
-            

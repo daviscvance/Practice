@@ -11,6 +11,7 @@
 from collections import defaultdict
 from itertools import product
 
+
 class Solution:
     # Dictionary | Time: O(m*n) | Space: O(m+n-1)
     def findDiagonalOrder(self, matrix: list[list[int]]) -> list[int]:
@@ -18,7 +19,7 @@ class Solution:
         diagonals = defaultdict(list)
         for row, col in product(range(rows), range(cols)):
             # Diagonal index is shared by the sum of position indexes.
-            diagonals[row+col].append(matrix[row][col])
+            diagonals[row + col].append(matrix[row][col])
 
         result = []
         for i, value in enumerate(diagonals.values()):

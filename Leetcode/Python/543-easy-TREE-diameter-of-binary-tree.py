@@ -11,6 +11,7 @@
 
 from typing import Optional
 
+
 class TreeNode:
     # Definition for a binary tree node.
     def __init__(self, val=0, left=None, right=None):
@@ -18,12 +19,15 @@ class TreeNode:
         self.left = left
         self.right = right
 
+
 class Solution:
+
     def __init__(self):
         self.diameter = 0
 
     # Recursion | Time: O(n) | Space: O(n)
     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+
         def depth(node: Optional[TreeNode]) -> int:
             if not node: return 0
             left_height, right_height = depth(node.left), depth(node.right)

@@ -11,6 +11,7 @@
 from collections import deque
 from typing import Optional
 
+
 class TreeNode:
     # Definition for a binary tree node.
     def __init__(self, val=0, left=None, right=None):
@@ -18,7 +19,8 @@ class TreeNode:
         self.left = left
         self.right = right
 
-class Solution:  
+
+class Solution:
     # Recursive DFS | Time: O(n) | Space: O(h)
     def widthOfBinaryTree(self, root: Optional[TreeNode]) -> int:
         index_map = {}

@@ -10,13 +10,17 @@
 
 from collections import defaultdict, deque
 
+
 class Solution:
-    def nextGreaterElement(self, nums1: list[int], nums2: list[int]) -> list[int]:
-      hash_map, stack = defaultdict(), deque()
 
-      for num2 in nums2:
-        while stack and stack[-1] < num2:
-          hash_map[stack.pop()] = num2  # The next element is greater, commit answer.
-        stack.append(num2)  # Continue down monotonically decreasing array.
+    def nextGreaterElement(self, nums1: list[int],
+                           nums2: list[int]) -> list[int]:
+        hash_map, stack = defaultdict(), deque()
 
-      return [hash_map.get(num1, -1) for num1 in nums1]
+        for num2 in nums2:
+            while stack and stack[-1] < num2:
+                hash_map[stack.pop(
+                )] = num2  # The next element is greater, commit answer.
+            stack.append(num2)  # Continue down monotonically decreasing array.
+
+        return [hash_map.get(num1, -1) for num1 in nums1]
