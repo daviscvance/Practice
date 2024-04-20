@@ -12,12 +12,13 @@
 from collections import Counter
 from heapq import heapify, heapreplace, heappop
 
+
 class Solution:
     # Max Heap | Time: O(n + n log n) | Space: O(k))
     def reorganizeString(self, string: str) -> str:
         max_heap = []
         for char, freq in Counter(string).items():
-            if freq > (len(string)+1)//2: 
+            if freq > (len(string) + 1) // 2:
                 return ''  # Impossible to alternate this frequency enough times.
             max_heap.append((-freq, char))
         heapify(max_heap)

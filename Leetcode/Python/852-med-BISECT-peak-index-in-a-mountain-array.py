@@ -8,9 +8,12 @@
 # Input: arr = [0,10,5,2]
 # Output: 1
 
+from typing import List
+
+
 class Solution:
     # Time: O(log n) | Space: O(1)
-    def peakIndexInMountainArray(self, arr: list[int]) -> int:
+    def peakIndexInMountainArray(self, arr: List[int]) -> int:
         lo, hi = 0, len(arr) - 1
         while lo < hi:
             mid = (lo + hi) // 2

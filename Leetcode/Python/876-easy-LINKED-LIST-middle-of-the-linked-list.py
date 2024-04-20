@@ -10,11 +10,13 @@
 
 from typing import Optional
 
+
 class ListNode:
     # Definition for singly-linked list.
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
+
 
 class Solution:
     # Tortoise & Hare | O(n) | Time: O(1)

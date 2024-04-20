@@ -11,6 +11,7 @@
 
 from typing import Optional
 
+
 class TreeNode:
     # Definition for a binary tree node.
     def __init__(self, val=0, left=None, right=None):
@@ -18,9 +19,11 @@ class TreeNode:
         self.left = left
         self.right = right
 
+
 class Solution:
     # Recursion | Time: O(h: log n -> n) | Space: O(h: log n -> n)
-    def insertIntoBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
+    def insertIntoBST(self, root: Optional[TreeNode],
+                      val: int) -> Optional[TreeNode]:
         if not root:
             return TreeNode(val)
         elif val > root.val:

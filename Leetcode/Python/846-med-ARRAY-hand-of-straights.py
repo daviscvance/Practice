@@ -6,9 +6,12 @@
 # Find if cards are rearrangeable to groups of straights.
 
 from collections import Counter
+from typing import List
+
 
 class Solution:
-    def isNStraightHand(self, hand: list[int], groupSize: int) -> bool:
+
+    def isNStraightHand(self, hand: List[int], groupSize: int) -> bool:
         # Not divisible by the size requirement.
         if len(hand) % groupSize != 0:
             return False

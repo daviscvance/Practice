@@ -9,10 +9,13 @@
 # Input: letters = ["c","f","j"], target = "c"
 # Output: "f"
 
+from typing import List
+
+
 class Solution:
     # Bisect Left | Time: O(log n) | Space: O(1)
     def nextGreatestLetter(self, letters: List[str], target: str) -> str:
-        lo, hi = 0, len(letters)-1
+        lo, hi = 0, len(letters) - 1
         while lo < hi:
             mid = (lo + hi) // 2
             if target < letters[mid]:
@@ -20,7 +23,7 @@ class Solution:
             else:
                 lo = mid + 1
         return letters[hi] if letters[hi] > target else letters[0]
-    
+
     # bisect_right | Time: O(log n) | Space: O(1)
     def nextGreatestLetter(self, letters: List[str], target: str) -> str:
         from bisect import bisect_right

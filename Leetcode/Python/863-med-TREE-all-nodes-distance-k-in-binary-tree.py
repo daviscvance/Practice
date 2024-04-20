@@ -13,27 +13,31 @@ from collections import defaultdict, deque
 from itertools import repeat
 from typing import Generator, List, Optional
 
+
 class TreeNode:
-    def __init__(
-            self,
-            val: int = 0,
-            left: Optional[TreeNode] = None,
-            right: Optional[TreeNode] = None) -> None:
+
+    def __init__(self,
+                 val: int = 0,
+                 left: Optional[TreeNode] = None,
+                 right: Optional[TreeNode] = None) -> None:
         self.val = val
         self.left = left
         self.right = right
+
 
 class Solution:
     # Graph conversion DFS | Time: O(n) | Space: O(n)
     def distanceK(self, root: TreeNode, target: TreeNode, k: int) -> List[int]:
         graph = defaultdict(list)
+
         def buildGraph(node: TreeNode, parent: TreeNode):
-            if node and parent: 
+            if node and parent:
                 # Associate parent child relationships // adjacencies.
                 graph[node.val].append(parent.val)
                 graph[parent.val].append(node.val)
             if node.left: buildGraph(node.left, node)
             if node.right: buildGraph(node.right, node)
+
         buildGraph(root, None)
 
         k_nodes = []
@@ -47,14 +51,18 @@ class Solution:
                 if neighbor not in visited:
                     visited.add(neighbor)
                     dfs(neighbor, distance + 1)
+
         dfs(target.val, 0)
 
         return k_nodes
 
     # Graph converstion BFS | Time: O(n) | Space: O(n)
-    def distanceK(self, root: Optional[TreeNode], target: TreeNode, k: int) -> list[int]:
-        def convertTreeToGraph(node: Optional[TreeNode] = root) -> Generator[
-                tuple[TreeNode, TreeNode], None, None]:
+    def distanceK(self, root: Optional[TreeNode], target: TreeNode,
+                  k: int) -> list[int]:
+
+        def convertTreeToGraph(
+            node: Optional[TreeNode] = root
+        ) -> Generator[tuple[TreeNode, TreeNode], None, None]:
             for child in (node.left, node.right):
                 if child:
                     yield node, child
@@ -63,7 +71,7 @@ class Solution:
 
         if not k:
             return [target.val]
-        
+
         # Build a hash table of neighbors for each child:parent and parent:child relationship.
         adjacencies = defaultdict(set)
         for parent, child in convertTreeToGraph():

@@ -8,7 +8,9 @@
 # Input: nums = [-1,0,3,5,9,12], target = 9
 # Output: 4
 
+
 class Solution:
+
     def search(self, nums: list[int], target: int) -> int:
         lo, hi = 0, len(nums) - 1
         while lo <= hi:

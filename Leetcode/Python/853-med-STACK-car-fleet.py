@@ -14,9 +14,13 @@
 # _ _ _ 03 _ _ _ _ _ _ _ _ T :3
 # 00 _ _ _ _ _ _ _ _ _ _ _ T :1
 
+from typing import List
+
+
 class Solution:
     # No Aux space | Time: O(nlogn) | Space: O(n)
-    def carFleet(self, target: int, position: list[int], speed: list[int]) -> int:
+    def carFleet(self, target: int, position: List[int],
+                 speed: List[int]) -> int:
         cars = sorted(zip(position, speed), reverse=True)
         time_by_car_ahead = -float('inf')
         num_fleet = 0
@@ -30,9 +34,11 @@ class Solution:
 
 from collections import deque
 
+
 class Solution:
     # Stack | Time: O(nlogn) | Space: O(n)
-    def carFleet(self, target: int, position: list[int], speed: list[int]) -> int:
+    def carFleet(self, target: int, position: List[int],
+                 speed: List[int]) -> int:
         cars = sorted(zip(position, speed), reverse=True)
         stack = deque()
         for pos, spd in cars:

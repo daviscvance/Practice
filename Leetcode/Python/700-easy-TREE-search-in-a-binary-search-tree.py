@@ -10,6 +10,7 @@
 
 from typing import Optional
 
+
 class TreeNode:
     # Definition for a binary tree node.
     def __init__(self, val=0, left=None, right=None):
@@ -17,9 +18,11 @@ class TreeNode:
         self.left = left
         self.right = right
 
+
 class Solution:
     # Recursion DFS | Time: O(log n) | Space: O(h)
-    def searchBST(self, root: Optional[TreeNode], target: int) -> Optional[TreeNode]:
+    def searchBST(self, root: Optional[TreeNode],
+                  target: int) -> Optional[TreeNode]:
         if not root or root.val == target:
             return root
         elif root.val > target:

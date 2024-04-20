@@ -7,6 +7,8 @@
 # def asteroidCollision(self, asteroids: List[int]) -> List[int]:
 
 from collections import deque
+from typing import List
+
 
 class Solution:
     # Time: O(n) | Space: O(n)

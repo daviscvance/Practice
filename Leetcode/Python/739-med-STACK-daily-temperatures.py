@@ -10,11 +10,14 @@
 # Output: [1,1,4,2,1,1,0,0]
 
 from collections import deque, namedtuple
+from typing import List
+
 
 class Solution:
     # Monotonic Stack | Time: O(n) | Space: O(n)
-    def dailyTemperatures(self, temperatures: list[int]) -> list[int]:
-        DayTemp = namedtuple("DayTemp", ['day', 'temp'])  # Day is the array index.
+    def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
+        DayTemp = namedtuple("DayTemp",
+                             ['day', 'temp'])  # Day is the array index.
         stack = deque()
         result = [0 for _ in temperatures]
 
