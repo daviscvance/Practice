@@ -8,6 +8,7 @@
 # Input: s = "aabcbc"
 # Output: true
 
+
 class Solution:
     # Stack | Time: O(n) | Space: O(n)
     def isValid(self, string: str) -> bool:
@@ -22,9 +23,10 @@ class Solution:
             stack.append(char)
         return len(stack) == 0
 
+
 class Solution:
     # Replacement | Time: O(>n) | Space: O(n)
     def isValid(self, s: str) -> bool:
         while 'abc' in s:
-            s = s.replace('abc','')
+            s = s.replace('abc', '')
         return not s

@@ -9,9 +9,12 @@
 # Output: 15
 # Explanation: weights = |1,2,3,4,5|6,7|8|9|10], days = 5
 
+from typing import List
+
+
 class Solution:
     # Time: O(n * log(S)) where S is search space | Space: O(1)
-    def shipWithinDays(self, weights: list[int], days: int) -> int:
+    def shipWithinDays(self, weights: List[int], days: int) -> int:
         payload, largest = 0, 0
         for weight in weights:
             payload += weight
@@ -30,9 +33,11 @@ class Solution:
 
         # Search space is minimum capacity to maxiumum capacity, or rather, it represents
         # the maximum amount of days to the minimum amount of days needed.
-        lo, hi = largest, payload  
+        lo, hi = largest, payload
         while lo < hi:
-            mid = (lo + lo + hi) // 3  # Capacity will be closer to the minimum than maximum.
+            mid = (
+                lo + lo + hi
+            ) // 3  # Capacity will be closer to the minimum than maximum.
             if shippable(mid):
                 hi = mid
             else:

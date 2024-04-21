@@ -3,20 +3,21 @@
 # Hash Table, String, Binary Search, Design
 # https://leetcode.com/problems/time-based-key-value-store
 #
-# Design a time-based key-value data structure that can store multiple values for the same key at
-# different time stamps and retrieve the key's value at a certain timestamp.
+# Design a time-based key-value data structure that can store multiple values
+# for the same key at different time stamps and retrieve the key's value at a
+# certain timestamp.
 # class TimeMap:
 #     def __init__(self):
 #     def set(self, key: str, value: str, timestamp: int) -> None:
 #     def get(self, key: str, timestamp: int) -> str:
-# Input
+# Input:
 # ["TimeMap", "set", "get", "get", "set", "get", "get"]
 # [[], ["foo", "bar", 1], ["foo", 1], ["foo", 3], ["foo", "bar2", 4], ["foo", 4], ["foo", 5]]
-# Output
-# [null, null, "bar", "bar", null, "bar2", "bar2"]
+# Output: [null, null, "bar", "bar", null, "bar2", "bar2"]
+
 
 class TimeMap:
-    # Time-based KVstore with .get() time complexity of O(log n). 
+    # Time-based KVstore with .get() time complexity of O(log n).
     def __init__(self):
         self.store = {}
 

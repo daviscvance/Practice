@@ -9,15 +9,17 @@
 
 from heapq import heappushpop, heapify, heappush
 from math import dist
+from typing import List
+
 
 class Solution:
     # Distance Tuple Max Heap | Time: O(n log n) | Space: O(k+1)
-    def kClosest(self, points: list[list[int]], k: int) -> list[list[int]]:
+    def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
         heapify(heap := [])
         for point in points:
             distance = -dist(point, [0, 0])  # Use neg to pop largest items.
             if len(heap) < k:
-                heappush(heap, (distance, point))    
+                heappush(heap, (distance, point))
             else:
                 heappushpop(heap, (distance, point))
         return [i[1] for i in heap]

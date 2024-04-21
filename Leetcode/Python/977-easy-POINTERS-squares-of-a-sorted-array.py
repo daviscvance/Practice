@@ -10,6 +10,7 @@
 
 from typing import List
 
+
 class Solution:
     # Two Pointer | Time: O(n) | Space: O(n)
     def sortedSquares(self, nums: List[int]) -> List[int]:
@@ -17,7 +18,7 @@ class Solution:
         left, right, idx = 0, N - 1, N - 1
         squares = [0] * N
         while left <= right:
-            lsq, rsq = nums[left] ** 2, nums[right] ** 2
+            lsq, rsq = nums[left]**2, nums[right]**2
             if lsq < rsq:
                 squares[idx] = rsq
                 right -= 1

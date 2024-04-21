@@ -1,4 +1,4 @@
-# 1047. Remove All Adjacent Duplicates In String 
+# 1047. Remove All Adjacent Duplicates In String
 # Easy
 # String, Stack
 # https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/
@@ -6,6 +6,7 @@
 # Remove repeated/contiguous duplicates. The answer is unique.
 # def removeDuplicates(self, s: str) -> str:
 # Input: s = "azxxzy", Output: "ay"
+
 
 class Solution:
     # Time: O(n) | Space: O(n)

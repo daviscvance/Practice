@@ -11,27 +11,27 @@
 from __future__ import annotations
 from typing import Optional
 
+
 class TreeNode:
-    def __init__(
-            self,
-            val: int = 0,
-            left: Optional[TreeNode] = None,
-            right: Optional[TreeNode] = None) -> None:
+
+    def __init__(self,
+                 val: int = 0,
+                 left: Optional[TreeNode] = None,
+                 right: Optional[TreeNode] = None) -> None:
         self.val = val
         self.left = left
         self.right = right
 
+
 class Solution:
     # Recursive DFS | Time: O(min(n1, n2)) | Space: O(min(h1, h2))
-    def flipEquiv(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> bool:
+    def flipEquiv(self, root1: Optional[TreeNode],
+                  root2: Optional[TreeNode]) -> bool:
         if root1 == root2:
             return True
         elif not root1 or not root2 or root1.val != root2.val:
             return False
-        return (
-            self.flipEquiv(root1.left, root2.left)
-            and self.flipEquiv(root1.right, root2.right)
-        ) or (  # Flip case:
-            self.flipEquiv(root1.left, root2.right)
-            and self.flipEquiv(root1.right, root2.left)
-        )
+        return (self.flipEquiv(root1.left, root2.left) and self.flipEquiv(
+            root1.right, root2.right)) or (  # Flip case:
+                self.flipEquiv(root1.left, root2.right)
+                and self.flipEquiv(root1.right, root2.left))

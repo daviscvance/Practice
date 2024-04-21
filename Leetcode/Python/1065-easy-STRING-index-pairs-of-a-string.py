@@ -11,6 +11,7 @@
 from re import finditer
 from typing import List
 
+
 class Solution:
     # Hash Set | Time: O(n * s + m^3) / O(n^2) | Space: O(n * s) / O(n)
     def indexPairs(self, text: str, words: List[str]) -> List[List[int]]:
@@ -25,6 +26,7 @@ class Solution:
 
     # Regex Find Iter | Time: O(s * n log n) | Space: O(n)
     from re import finditer
+
     def indexPairs(self, text: str, words: List[str]) -> List[List[int]]:
         pairs = []
         for word in words:

@@ -10,12 +10,14 @@
 
 from typing import Optional
 
+
 class TreeNode:
     # Definition for a binary tree node.
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
+
 
 class Solution:
     # Recursion DFS | Time: O(n) | Space: O(n)
@@ -26,7 +28,5 @@ class Solution:
             return self.rangeSumBST(root.left, lo, hi)
         elif root.val < lo:  # Out of range, prune left side.
             return self.rangeSumBST(root.right, lo, hi)
-        return (
-            root.val 
-            + self.rangeSumBST(root.left, lo, hi)
-            + self.rangeSumBST(root.right, lo, hi))
+        return (root.val + self.rangeSumBST(root.left, lo, hi) +
+                self.rangeSumBST(root.right, lo, hi))
