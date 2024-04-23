@@ -10,11 +10,12 @@
 
 from collections import Counter
 from heapq import heapify, heappop
+from typing import List
 
 class Solution:
     # Min Heap + Counter | Time: O(n + k log n) | Space: O(n)
-    def findLeastNumOfUniqueInts(self, arr: list[int], k: int) -> int:
-        heapify(min_heap := list(Counter(arr).values()))
+    def findLeastNumOfUniqueInts(self, arr: List[int], k: int) -> int:
+        heapify(min_heap := List(Counter(arr).values()))
         while k > 0:
             k -= heappop(min_heap)
         return len(min_heap) + (k < 0)

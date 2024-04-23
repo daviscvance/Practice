@@ -8,12 +8,16 @@
 # Input: original = [1,2,3,4], m = 2, n = 2
 # Output: [[1,2],[3,4]]
 
+from typing import List
+
+
 class Solution:
     # Array splicing | Time: O(n)? | Space: O(n)
-    def construct2DArray(self, original: list[int], rows: int, cols: int) -> list[list[int]]:
+    def construct2DArray(self, original: List[int], rows: int,
+                         cols: int) -> List[List[int]]:
         matrix = []
         N = len(original)
         if rows * cols == N:
             for i in range(0, N, cols):
-                matrix.append(original[i:i+cols])
+                matrix.append(original[i:i + cols])
         return matrix

@@ -9,6 +9,7 @@
 # Input: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4
 # Output: 5
 
+
 class Node:
     # Definition for a binary tree node.
     def __init__(self, val):
@@ -16,6 +17,7 @@ class Node:
         self.left = None
         self.right = None
         self.parent = None
+
 
 class Solution:
     # Set + Two Pointer | Time: O(h) | Space: O(h)

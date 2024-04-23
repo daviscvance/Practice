@@ -9,13 +9,14 @@
 # Output: "2"
 
 import heapq
-
 from typing import List
+
 
 class Solution:
     # Lambda Sort | Time: O(n log n)
     def kthLargestNumber(self, nums: List[str], k: int) -> str:
-        return sorted(nums, key= lambda i : int(i))[-k]
+        return sorted(nums, key=lambda i: int(i))[-k]
+
 
 class Solution:
     # Heap | Time: O(n log n) | Space: O(n)
@@ -23,6 +24,7 @@ class Solution:
         nums = list(map(int, nums))
         heapq.heapify(nums)
         return str(heapq.nlargest(k, nums)[-1])
+
 
 class Solution:
     # K Heap | Time: O(n log k) | Space: O(n) | 100%

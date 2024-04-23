@@ -7,6 +7,7 @@
 # def minRemoveToMakeValid(self, s: str) -> str:
 # Input: s = "lee(t(c)o)de)", Output: "lee(t(c)o)de"
 
+
 class Solution:
     # Time: O(n) | Space: O(n)
     def minRemoveToMakeValid(self, string: str) -> str:

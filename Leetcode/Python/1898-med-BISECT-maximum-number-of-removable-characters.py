@@ -8,13 +8,17 @@
 # Input: s = "abcacb", p = "ab", removable = [3,1,0]
 # Output: 2
 
+from typing import List
+
+
 class Solution:
     # Binary search the removable space | Time: O(n log n) | Space: O(n)
-    def maximumRemovals(self, string: str, subsequence: str, removable: list[int]) -> int:
+    def maximumRemovals(self, string: str, subsequence: str,
+                        removable: List[int]) -> int:
         lo, hi = 0, len(removable)
 
         def feasible(indexes):
-            string_arr = list(string)
+            string_arr = List(string)
             # Remove the character from string.
             for idx_to_remove in removable[:indexes]:
                 string_arr[idx_to_remove] = ''
@@ -32,4 +36,3 @@ class Solution:
             else:
                 hi = mid - 1
         return lo
-            

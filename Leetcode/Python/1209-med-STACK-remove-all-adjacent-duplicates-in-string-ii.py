@@ -2,13 +2,15 @@
 # Medium
 # String, Stack
 # https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii
-# 
+#
 # Remove k repeated/contiguous duplicates. The answer is unique.
 # def removeDuplicates(self, s: str, k: int) -> str:
 # s = pbbcggttciiippooaais, k = 2, 'ps'
 
+
 class Solution:
-    def removeDuplicates(self, s: str, k: int) -> str:        
+
+    def removeDuplicates(self, s: str, k: int) -> str:
         stack = [['', 0]]
 
         for char in s:
@@ -17,6 +19,6 @@ class Solution:
                 if stack[-1][1] == k:  # k criteria for count seen.
                     stack.pop()  # Pop the element from stack.
             else:
-                stack.append([char, 1])  # Initialize new char. 
+                stack.append([char, 1])  # Initialize new char.
 
         return ''.join(char * ct for char, ct in stack)

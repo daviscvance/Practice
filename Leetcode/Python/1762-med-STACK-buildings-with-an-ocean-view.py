@@ -3,16 +3,20 @@
 # Array, Stack, Monotonic Stack
 # https://leetcode.com/problems/buildings-with-an-ocean-view
 #
-# Find the indexes of the building with an ocean view (no taller buildings towards the beach) 
+# Find the indexes of the building with an ocean view (no taller buildings towards the beach)
 # def findBuildings(self, heights: List[int]) -> List[int]:
 
 from collections import deque
+from typing import List
+
 
 class Solution:
     # Monotonic Stack | Time: O(n) | Space: O(n)
-    def findBuildings(self, heights: list[int]) -> deque[int]:
+    def findBuildings(self, heights: List[int]) -> deque[int]:
         max_height = heights[-1]  # Right most building height.
-        build_idx = deque([len(heights) - 1])  # Right most building automatically has ocean view.
+        build_idx = deque([
+            len(heights) - 1
+        ])  # Right most building automatically has ocean view.
 
         # Right to left traversal.
         for idx in reversed(range(len(heights) - 1)):

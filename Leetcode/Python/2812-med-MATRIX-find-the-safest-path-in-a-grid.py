@@ -12,8 +12,9 @@ from typing import List
 from itertools import product
 import heapq
 
+
 class Solution:
-    
+
     def maximumSafenessFactor(self, grid: List[List[int]]) -> int:
         thieves_map = []
         rows, cols = len(grid), len(grid[0])
@@ -32,12 +33,13 @@ class Solution:
                 if not visited[i][j]:
                     visited[i][j] = 1
                     distance[i][j] = depth
-                    for x, y in [[i + 1, j], [i - 1, j], [i, j + 1], [i, j - 1]]:
+                    for x, y in [[i + 1, j], [i - 1, j], [i, j + 1],
+                                 [i, j - 1]]:
                         if 0 <= x < rows and 0 <= y < cols:
                             safety_map.append([x, y])
             thieves_map = safety_map
             depth += 1
-            
+
         # Start from (0, 0) and use dijkstra.
         visited = [[0 for _ in range(cols)] for _ in range(rows)]
         pq = [[-distance[0][0], 0, 0]]

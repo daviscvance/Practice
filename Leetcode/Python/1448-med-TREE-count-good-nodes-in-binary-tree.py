@@ -12,19 +12,23 @@
 from __future__ import annotations
 from typing import Optional
 
+
 class TreeNode:
-    def __init__(
-            self,
-            val: int = 0,
-            left: Optional[TreeNode] = None,
-            right: Optional[TreeNode] = None) -> None:
+
+    def __init__(self,
+                 val: int = 0,
+                 left: Optional[TreeNode] = None,
+                 right: Optional[TreeNode] = None) -> None:
         self.val = val
         self.left = left
         self.right = right
 
+
 class Solution:
+
     def goodNodes(self, root: TreeNode) -> int:
         nodes = 0
+
         def dfs(node: TreeNode, max_node: int = root.val):
             if not node: return
             nonlocal nodes
@@ -32,5 +36,6 @@ class Solution:
             nodes += max_node == node.val
             dfs(node.left, max_node)
             dfs(node.right, max_node)
+
         dfs(root, root.val)  # Root is always a good node.
         return nodes
