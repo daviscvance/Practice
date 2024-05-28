@@ -17,21 +17,22 @@ class Solution:
         if not nums or 1 not in nums:
             return 1
 
-        # Move positives to the left, negatives to the end.
+        # Move positives to the left, negatives to the right end.
         pos_count = 0
         for idx in range(len(nums)):
             if nums[idx] > 0:
                 nums[idx], nums[pos_count] = nums[pos_count], nums[idx]
                 pos_count += 1
 
+        # Negative marking for visited positives.
         for num in range(pos_count):
             idx = abs(nums[num]) - 1
             if idx < len(nums):
-                # Take care of duplicates which have already been negated.
-                nums[idx] = abs(nums[idx]) * -1
+                nums[idx] = abs(nums[idx]) * -1  # Assume duplicates may exist.
 
+        # Return first unvisited positive.
         for idx, num in enumerate(nums, start=1):
-            if num > -1:
+            if num > -1 and idx <= pos_count:
                 return idx
         return pos_count + 1
 
